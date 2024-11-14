@@ -14,6 +14,7 @@ void ListDataOrder();
 void ListAlgorithms();
 void CollectDataForReport();
 
+bool is_number(const std::string& s);
 SortResults SelectionSort(int *a, int n);
 SortResults InsertionSort(int *a, int n);
 SortResults ShellSort(int *a, int n);
