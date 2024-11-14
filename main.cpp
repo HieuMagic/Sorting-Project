@@ -6,9 +6,7 @@ int main()
 {
     //Declare Data Order and Data Size
     vector<int> data_sizes = {10, 30, 50, 100, 300, 500};
-    vector<int*> sorted, nearly_sorted, reverse_sorted, randomized;
-    vector<vector<int*>> data_orders = {sorted, nearly_sorted, reverse_sorted, randomized};
-    vector<string> data_order_names = {"Randomized", "Sorted", "Reverse Sorted", "Nearly Sorted"};
+    vector<string> data_orders = {"Randomized", "Sorted", "Reverse Sorted", "Nearly Sorted"};
     vector<string> algorithms = {"SelectionSort", "InsertionSort"}; //Finished Algorithm
     //"SelectionSort", "InsertionSort", "HeapSort", "MergeSort", "QuickSort",
     //"RadixSort", "Counting", "BinaryInsertionSort", "ShakerSort", "FlashSort"
@@ -19,12 +17,10 @@ int main()
     if (!fout.is_open()) cout << "Cant open result file.\n";
 
     //Controler Variables
-    int data_type = 0;
+    int data_type = 0; 
     int sort_type = 0;
-    int nameIndex = 0;
     // for each Data Order S1
-    for (vector<int*> data_order : data_orders){
-        string data_order_name = data_order_names[nameIndex++];
+    for (string data_order : data_orders){
         // for each Data Size S2
         for (int size : data_sizes){
             // - Create an original array A1 with Data Order S1 and Data Size S2
@@ -52,7 +48,7 @@ int main()
                     //Calculate running time
                     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
                     
-                    fout << "[" << data_order_name << "] with size [" << size << "] using [" << algorithm << "]\t->Time: " << duration.count() << " miliseconds\t\tComparisons: " << comparisons << "\n";
+                    fout << "[" << data_order << "] with size [" << size << "] using [" << algorithm << "]\t->Time: " << duration.count() << " miliseconds\t\tComparisons: " << comparisons << "\n";
                     //
                 // - Take note of S1, S2, S3, running time and number of comparisons
             }
