@@ -1,21 +1,30 @@
+#pragma once
+#include <iostream>
 #include <vector>
 #include <string>
 #include <fstream>
 #include <chrono>
+#include <map>
 #include "data_generator.cpp"
 
-void SortData(int a[], int n, int &comparisons, int sortType);
-void SelectionSort(int a[], int n, int &comparions);
-void InsertionSort(int a[], int n, int &comparions);
-void ShellSort(int a[], int n, int &comparions);
-void BubbleSort(int a[], int n, int &comparions);
-void HeapSort(int a[], int n, int &comparions);
-void MergeSort(int a[], int n, int &comparions);
-void QuickSort(int a[], int n, int &comparions);
-void RadixSort(int a[], int n, int &comparions);
-void CountingSort(int a[], int n, int &comparions);
-void BinaryInsertionSort(int a[], int n, int &comparions);
-void ShakerSort(int a[], int n, int &comparions);
-void FlashSort(int a[], int n, int &comparions);
+//
+struct SortResults;
+
+void ListDataOrder();
+void ListAlgorithms();
+void CollectDataForReport();
+
+SortResults SelectionSort(int *a, int n);
+SortResults InsertionSort(int *a, int n);
+SortResults ShellSort(int *a, int n);
+SortResults BubbleSort(int *a, int n);
+SortResults HeapSort(int *a, int n);
+SortResults MergeSort(int *a, int n);
+SortResults QuickSort(int *a, int n);
+SortResults RadixSort(int *a, int n);
+SortResults CountingSort(int *a, int n);
+SortResults BinaryInsertionSort(int *a, int n);
+SortResults ShakerSort(int *a, int n);
+SortResults FlashSort(int *a, int n);
 
 
