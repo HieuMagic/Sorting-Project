@@ -7,14 +7,14 @@ typedef SortResults (*SortFunction)(int*, int);
 typedef void (*DataOrder)(int*, int);
 
 //Map to store the algorithm names and names of the function to call them
-map<string, SortFunction> sorting_algorithms;
+unordered_map<string, SortFunction> sorting_algorithms;
 
 //Map to store the data order names and names of the function to generate them
-map<string, DataOrder> data_orders;
+unordered_map<string, DataOrder> data_orders;
 
 //struct to store the result
 struct SortResults{
-    double time_ms;
+    long long time_ms;
     long long comparisons;
 };
 
@@ -86,6 +86,16 @@ int main(int argc, char** argv)
                 //Sort the array and get the result
                 SortResults result = sort_function(array_2, size);
                 
+                //Write the sorted array to the output file
+                ofstream fout("output.txt");
+                if (!fout.is_open()){
+                    cout << "Unable to open output file. Ending program...";
+                    return 1;
+                }
+                for (int i = 0; i < size; i++){
+                    fout << array_2[i] << " ";
+                }
+
                 //Check if we need to show time or number of comparions or both
                 bool show_time = false;
                 bool show_comparisons = false;
@@ -103,6 +113,7 @@ int main(int argc, char** argv)
 
                 delete[] array;
                 fin.close();
+                fout.close();
             }  
             //COMMAND 3
             else {//If argv[3] is a number, then we run command 3 (argv[3] = [Input size])
@@ -114,6 +125,9 @@ int main(int argc, char** argv)
                 cout << "ALGORITHM MODE\n";
                 cout << "Algorithm: " << algorithm_name << "\n";
                 cout << "Input size: " << size << '\n';
+                
+                //Initialize the input file index
+                string input_file_index = "1";
 
                 //For each data order, we print the results
                 for (pair<string, DataOrder> data_order : data_orders)
@@ -129,6 +143,21 @@ int main(int argc, char** argv)
                     //Sort the array and get the result
                     SortResults result = sort_function(array_2, size);
                     
+                    //Write the generated array to the output file 
+                    //(This run 4 times and each time we write to input_1.txt, input_2.txt, input_3.txt, input_4.txt)
+                    ofstream fout("input_" + input_file_index + ".txt");
+                    if (!fout.is_open()){
+                        cout << "Unable to open output file. Ending program...";
+                        return 1;
+                    }
+
+                    for (int i = 0; i < size; i++){
+                        fout << array[i] << " ";
+                    }
+
+                    //Increase the input file index
+                    input_file_index[0]++;
+
                     //Check if we need to show time or number of comparions or both
                     bool show_time = false;
                     bool show_comparisons = false;
@@ -142,6 +171,7 @@ int main(int argc, char** argv)
                     cout << "\n";
                     
                     delete[] array;
+                    fout.close();
                 }
             }
         }
@@ -177,6 +207,28 @@ int main(int argc, char** argv)
             //Sort the array and get the result
             SortResults result = sort_function(array_2, size);
             
+            //Write the generated array to the input file
+            ofstream fout("input.txt");
+            if (!fout.is_open()){
+                cout << "Unable to open output file. Ending program...";
+                return 1;
+            }
+
+            for (int i = 0; i < size; i++){
+                fout << array[i] << " ";
+            }
+
+            //Write the sorted array to the output file
+            ofstream fout2("output.txt");
+            if (!fout2.is_open()){
+                cout << "Unable to open output file. Ending program...";
+                return 1;
+            }
+
+            for (int i = 0; i < size; i++){
+                fout2 << array_2[i] << " ";
+            }
+
             //Check if we need to show time or number of comparions or both
             bool show_time = false;
             bool show_comparisons = false;
@@ -193,6 +245,8 @@ int main(int argc, char** argv)
             if (show_comparisons) cout << "Comparison: " << result.comparisons << "\n";
 
             delete[] array;
+            fout.close();
+            fout2.close();
         }
         else {
             cout << "Too many/few arguments. Ending program...";
@@ -218,6 +272,7 @@ int main(int argc, char** argv)
             sort_function_2 = sorting_algorithms[algorithm_2_name];
         }
 
+        //COMMAND 4
         if (argc == 5){ //Which is the command 4's number of arguments. We run command 4
             //Get data from argurment
             string filename = argv[4];
@@ -244,11 +299,8 @@ int main(int argc, char** argv)
                 data_index = data_line.find(' ', data_index) + 1;
             }
 
-            //Create array
-            int* array = new int[size];
-            int* array_2 = new int[size];
-            
             //Duplicate the array
+            int* array_2 = new int[size];
             copy(array, array + size, array_2);
             //Sort the array and get the results
             SortResults result_1 = sort_function_1(array_2, size);
@@ -270,6 +322,7 @@ int main(int argc, char** argv)
             delete[] array;
             fin.close();
         }
+        //COMMAND 5
         else if (argc == 6){ //Which is the command 5's number of arguments. We run command 5
             //Get data from argurment
             int size = stoi(argv[4]);
@@ -303,6 +356,17 @@ int main(int argc, char** argv)
             //Sort the array and get the results
             SortResults result_2 = sort_function_2(array_2, size);
 
+            //Write the generated array to the input file
+            ofstream fout("input.txt");
+            if (!fout.is_open()){
+                cout << "Unable to open output file. Ending program...";
+                return 1;
+            }
+
+            for (int i = 0; i < size; i++){
+                fout << array[i] << " ";
+            }
+
             //Show the results
             cout << "ALGORITHM MODE\n";
             cout << "Algorithm: " << algorithm_1_name << " | " << algorithm_2_name <<  "\n";
@@ -313,6 +377,7 @@ int main(int argc, char** argv)
             cout << "Comparison: " << result_1.comparisons << " | " << result_2.comparisons << "\n";
 
             delete[] array;
+            fout.close();
         }
     }
     else { //If user enter any other flag
@@ -325,10 +390,10 @@ int main(int argc, char** argv)
 
 void ListDataOrder(){
     //ADD DATA ORDER HERE
-    data_orders["randomized"] = GenerateRandomData;
-    data_orders["sorted"] = GenerateSortedData;
-    data_orders["reverse"] = GenerateReverseData;
-    data_orders["nearly_sorted"] = GenerateNearlySortedData;
+    data_orders["-rev"] = GenerateReverseData;
+    data_orders["-sorted"] = GenerateSortedData;
+    data_orders["-nsorted"] = GenerateNearlySortedData;
+    data_orders["-rand"] = GenerateRandomData;
     //
 }
 
@@ -336,6 +401,10 @@ void ListAlgorithms(){
     //ADD ALGORITHMS HEHE
     sorting_algorithms["selection-sort"] = SelectionSort;
     sorting_algorithms["insertion-sort"] = InsertionSort;
+    //Arguments:
+    //selection-sort, bubble-sort, insertion-sort, binary-insertion-sort, merge-sort, quick-sort,
+    //heap-sort, radix-sort, shell-sort, counting-sort, shaker-sort, flash-sort
+
     // Only add algorithms that are fully implemented
     //"SelectionSort", "InsertionSort", "ShellSort", "BubbleSort" ,"HeapSort", "MergeSort", 
     //"QuickSort", "RadixSort", "Counting", "BinaryInsertionSort", "ShakerSort", "FlashSort"
@@ -404,7 +473,7 @@ SortResults SelectionSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -432,7 +501,7 @@ SortResults InsertionSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -450,7 +519,7 @@ SortResults ShellSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -468,7 +537,7 @@ SortResults BubbleSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -486,7 +555,7 @@ SortResults HeapSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -504,7 +573,7 @@ SortResults MergeSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -522,7 +591,7 @@ SortResults QuickSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -540,7 +609,7 @@ SortResults RadixSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -558,7 +627,7 @@ SortResults CountingSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -576,7 +645,7 @@ SortResults BinaryInsertionSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -594,7 +663,7 @@ SortResults ShakerSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};
@@ -612,7 +681,7 @@ SortResults FlashSort(int a[], int n)
 
     //Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
 
     //Return the result
     return {time, comparisons};

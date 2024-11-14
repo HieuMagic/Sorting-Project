@@ -1,48 +1,48 @@
-[Randomized] with size [10] using [SelectionSort]	->Time: 0 miliseconds		Comparisons: 45
-[Randomized] with size [10] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 20
-[Randomized] with size [30] using [SelectionSort]	->Time: 2 miliseconds		Comparisons: 435
-[Randomized] with size [30] using [InsertionSort]	->Time: 1 miliseconds		Comparisons: 238
-[Randomized] with size [50] using [SelectionSort]	->Time: 4 miliseconds		Comparisons: 1225
-[Randomized] with size [50] using [InsertionSort]	->Time: 2 miliseconds		Comparisons: 553
-[Randomized] with size [100] using [SelectionSort]	->Time: 13 miliseconds		Comparisons: 4950
-[Randomized] with size [100] using [InsertionSort]	->Time: 7 miliseconds		Comparisons: 2769
-[Randomized] with size [300] using [SelectionSort]	->Time: 93 miliseconds		Comparisons: 44850
-[Randomized] with size [300] using [InsertionSort]	->Time: 54 miliseconds		Comparisons: 22888
-[Randomized] with size [500] using [SelectionSort]	->Time: 208 miliseconds		Comparisons: 124750
-[Randomized] with size [500] using [InsertionSort]	->Time: 114 miliseconds		Comparisons: 61018
-[Sorted] with size [10] using [SelectionSort]	->Time: 0 miliseconds		Comparisons: 45
-[Sorted] with size [10] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 9
-[Sorted] with size [30] using [SelectionSort]	->Time: 1 miliseconds		Comparisons: 435
-[Sorted] with size [30] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 29
-[Sorted] with size [50] using [SelectionSort]	->Time: 3 miliseconds		Comparisons: 1225
-[Sorted] with size [50] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 49
-[Sorted] with size [100] using [SelectionSort]	->Time: 11 miliseconds		Comparisons: 4950
-[Sorted] with size [100] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 99
-[Sorted] with size [300] using [SelectionSort]	->Time: 81 miliseconds		Comparisons: 44850
-[Sorted] with size [300] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 299
-[Sorted] with size [500] using [SelectionSort]	->Time: 249 miliseconds		Comparisons: 124750
-[Sorted] with size [500] using [InsertionSort]	->Time: 1 miliseconds		Comparisons: 499
-[Reverse Sorted] with size [10] using [SelectionSort]	->Time: 0 miliseconds		Comparisons: 45
-[Reverse Sorted] with size [10] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 54
-[Reverse Sorted] with size [30] using [SelectionSort]	->Time: 1 miliseconds		Comparisons: 435
-[Reverse Sorted] with size [30] using [InsertionSort]	->Time: 1 miliseconds		Comparisons: 464
-[Reverse Sorted] with size [50] using [SelectionSort]	->Time: 3 miliseconds		Comparisons: 1225
-[Reverse Sorted] with size [50] using [InsertionSort]	->Time: 3 miliseconds		Comparisons: 1274
-[Reverse Sorted] with size [100] using [SelectionSort]	->Time: 12 miliseconds		Comparisons: 4950
-[Reverse Sorted] with size [100] using [InsertionSort]	->Time: 9 miliseconds		Comparisons: 5049
-[Reverse Sorted] with size [300] using [SelectionSort]	->Time: 85 miliseconds		Comparisons: 44850
-[Reverse Sorted] with size [300] using [InsertionSort]	->Time: 96 miliseconds		Comparisons: 45149
-[Reverse Sorted] with size [500] using [SelectionSort]	->Time: 200 miliseconds		Comparisons: 124750
-[Reverse Sorted] with size [500] using [InsertionSort]	->Time: 230 miliseconds		Comparisons: 125249
-[Nearly Sorted] with size [10] using [SelectionSort]	->Time: 0 miliseconds		Comparisons: 45
-[Nearly Sorted] with size [10] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 39
-[Nearly Sorted] with size [30] using [SelectionSort]	->Time: 1 miliseconds		Comparisons: 435
-[Nearly Sorted] with size [30] using [InsertionSort]	->Time: 0 miliseconds		Comparisons: 161
-[Nearly Sorted] with size [50] using [SelectionSort]	->Time: 2 miliseconds		Comparisons: 1225
-[Nearly Sorted] with size [50] using [InsertionSort]	->Time: 1 miliseconds		Comparisons: 191
-[Nearly Sorted] with size [100] using [SelectionSort]	->Time: 8 miliseconds		Comparisons: 4950
-[Nearly Sorted] with size [100] using [InsertionSort]	->Time: 2 miliseconds		Comparisons: 625
-[Nearly Sorted] with size [300] using [SelectionSort]	->Time: 71 miliseconds		Comparisons: 44850
-[Nearly Sorted] with size [300] using [InsertionSort]	->Time: 6 miliseconds		Comparisons: 2635
-[Nearly Sorted] with size [500] using [SelectionSort]	->Time: 188 miliseconds		Comparisons: 124750
-[Nearly Sorted] with size [500] using [InsertionSort]	->Time: 11 miliseconds		Comparisons: 4865
+[nearly_sorted] with size [100] using [insertion-sort]	->Time: 2 miliseconds		Comparisons: 795
+[nearly_sorted] with size [100] using [selection-sort]	->Time: 9 miliseconds		Comparisons: 4950
+[nearly_sorted] with size [300] using [insertion-sort]	->Time: 5 miliseconds		Comparisons: 2255
+[nearly_sorted] with size [300] using [selection-sort]	->Time: 74 miliseconds		Comparisons: 44850
+[nearly_sorted] with size [500] using [insertion-sort]	->Time: 10 miliseconds		Comparisons: 4259
+[nearly_sorted] with size [500] using [selection-sort]	->Time: 201 miliseconds		Comparisons: 124750
+[nearly_sorted] with size [1000] using [insertion-sort]	->Time: 18 miliseconds		Comparisons: 7925
+[nearly_sorted] with size [1000] using [selection-sort]	->Time: 778 miliseconds		Comparisons: 499500
+[nearly_sorted] with size [3000] using [insertion-sort]	->Time: 67 miliseconds		Comparisons: 33483
+[nearly_sorted] with size [3000] using [selection-sort]	->Time: 5731 miliseconds		Comparisons: 4498500
+[nearly_sorted] with size [5000] using [insertion-sort]	->Time: 76 miliseconds		Comparisons: 39941
+[nearly_sorted] with size [5000] using [selection-sort]	->Time: 16256 miliseconds		Comparisons: 12497500
+[randomized] with size [100] using [insertion-sort]	->Time: 5 miliseconds		Comparisons: 2409
+[randomized] with size [100] using [selection-sort]	->Time: 9 miliseconds		Comparisons: 4950
+[randomized] with size [300] using [insertion-sort]	->Time: 37 miliseconds		Comparisons: 21231
+[randomized] with size [300] using [selection-sort]	->Time: 65 miliseconds		Comparisons: 44850
+[randomized] with size [500] using [insertion-sort]	->Time: 100 miliseconds		Comparisons: 59010
+[randomized] with size [500] using [selection-sort]	->Time: 179 miliseconds		Comparisons: 124750
+[randomized] with size [1000] using [insertion-sort]	->Time: 423 miliseconds		Comparisons: 251084
+[randomized] with size [1000] using [selection-sort]	->Time: 675 miliseconds		Comparisons: 499500
+[randomized] with size [3000] using [insertion-sort]	->Time: 4343 miliseconds		Comparisons: 2217674
+[randomized] with size [3000] using [selection-sort]	->Time: 6047 miliseconds		Comparisons: 4498500
+[randomized] with size [5000] using [insertion-sort]	->Time: 11342 miliseconds		Comparisons: 6313026
+[randomized] with size [5000] using [selection-sort]	->Time: 16041 miliseconds		Comparisons: 12497500
+[reverse] with size [100] using [insertion-sort]	->Time: 9 miliseconds		Comparisons: 5049
+[reverse] with size [100] using [selection-sort]	->Time: 8 miliseconds		Comparisons: 4950
+[reverse] with size [300] using [insertion-sort]	->Time: 77 miliseconds		Comparisons: 45149
+[reverse] with size [300] using [selection-sort]	->Time: 70 miliseconds		Comparisons: 44850
+[reverse] with size [500] using [insertion-sort]	->Time: 213 miliseconds		Comparisons: 125249
+[reverse] with size [500] using [selection-sort]	->Time: 172 miliseconds		Comparisons: 124750
+[reverse] with size [1000] using [insertion-sort]	->Time: 853 miliseconds		Comparisons: 500499
+[reverse] with size [1000] using [selection-sort]	->Time: 676 miliseconds		Comparisons: 499500
+[reverse] with size [3000] using [insertion-sort]	->Time: 7744 miliseconds		Comparisons: 4501499
+[reverse] with size [3000] using [selection-sort]	->Time: 6115 miliseconds		Comparisons: 4498500
+[reverse] with size [5000] using [insertion-sort]	->Time: 25620 miliseconds		Comparisons: 12502499
+[reverse] with size [5000] using [selection-sort]	->Time: 16775 miliseconds		Comparisons: 12497500
+[sorted] with size [100] using [insertion-sort]	->Time: 0 miliseconds		Comparisons: 99
+[sorted] with size [100] using [selection-sort]	->Time: 7 miliseconds		Comparisons: 4950
+[sorted] with size [300] using [insertion-sort]	->Time: 0 miliseconds		Comparisons: 299
+[sorted] with size [300] using [selection-sort]	->Time: 61 miliseconds		Comparisons: 44850
+[sorted] with size [500] using [insertion-sort]	->Time: 1 miliseconds		Comparisons: 499
+[sorted] with size [500] using [selection-sort]	->Time: 167 miliseconds		Comparisons: 124750
+[sorted] with size [1000] using [insertion-sort]	->Time: 2 miliseconds		Comparisons: 999
+[sorted] with size [1000] using [selection-sort]	->Time: 657 miliseconds		Comparisons: 499500
+[sorted] with size [3000] using [insertion-sort]	->Time: 6 miliseconds		Comparisons: 2999
+[sorted] with size [3000] using [selection-sort]	->Time: 6063 miliseconds		Comparisons: 4498500
+[sorted] with size [5000] using [insertion-sort]	->Time: 10 miliseconds		Comparisons: 4999
+[sorted] with size [5000] using [selection-sort]	->Time: 16415 miliseconds		Comparisons: 12497500
