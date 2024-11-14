@@ -8,6 +8,8 @@ typedef void (*DataOrder)(int*, int);
 
 //Map to store the algorithm names and names of the function to call them
 map<string, SortFunction> sorting_algorithms;
+
+//Map to store the data order names and names of the function to generate them
 map<string, DataOrder> data_orders;
 
 int main(int argc, char* argv[])
@@ -42,8 +44,8 @@ void ListAlgorithms(){
     sorting_algorithms["selection-sort"] = SelectionSort;
     sorting_algorithms["insertion-sort"] = InsertionSort;
     // Only add algorithms that are fully implemented
-    //"SelectionSort", "InsertionSort", "HeapSort", "MergeSort", "QuickSort",
-    //"RadixSort", "Counting", "BinaryInsertionSort", "ShakerSort", "FlashSort"
+    //"SelectionSort", "InsertionSort", "ShellSort", "BubbleSort" ,"HeapSort", "MergeSort", 
+    //"QuickSort", "RadixSort", "Counting", "BinaryInsertionSort", "ShakerSort", "FlashSort"
 }
 
 void CollectDataForReport(){
@@ -60,7 +62,7 @@ void CollectDataForReport(){
         for (int size : data_sizes){
             // - Create an original array A1 with Data Order S1 and Data Size S2
             int* original_array = new int[size];
-            data_order.second(original_array, size);
+            data_order.second(original_array, size); //data_order.second is the function to generate data
             // for each Sorting Algorithm S3
             for (pair<string, SortFunction> algorithm : sorting_algorithms){
                 // - Make a duplicate array A2 of the original array A1
@@ -69,7 +71,7 @@ void CollectDataForReport(){
                 // - Sort array A2 using the Sorting Algorithm S3, while:
                     // + Measuring the running time (in millisecs), and
                     // + Counting the number of comparisons in the algorithm
-                SortResults result = algorithm.second(duplicated_array, size);
+                SortResults result = algorithm.second(duplicated_array, size); //algorithm.second is the function to sort
                 
                 // - Take note of S1, S2, S3, running time and number of comparisons
                 fout << "[" << data_order.first << "] with size [" << size << "] using [" << algorithm.first << 
@@ -137,50 +139,180 @@ SortResults InsertionSort(int a[], int n)
 
 SortResults ShellSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults BubbleSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults HeapSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults MergeSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults QuickSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults RadixSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults CountingSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults BinaryInsertionSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults ShakerSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
 
 SortResults FlashSort(int a[], int n)
 {
-    return {0,0};
+    //Start counting time and comparisons
+    long long comparisons = 0;
+    chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
+    
+    //BEGIN SORTING
+    
+    //END OF SORTING
+
+    //Stop counting and calculate time 
+    chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
+    double time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+
+    //Return the result
+    return {time, comparisons};
 }
