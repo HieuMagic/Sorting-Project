@@ -9,7 +9,7 @@ Welcome to the Sorting Project! This project demonstrates various sorting algori
 3. Compile the source code using your preferred compiler.
 Example with g++:
 ```bash
-g++ -o sorting sorting.cpp
+g++ sorting.cpp -o sorting.exe
 ```
 4.Your source code can compiled into an executable file (.exe) that can be executed using commands
 in the command prompt. The executable file must be placed in the same directory as the source code.
