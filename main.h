@@ -7,14 +7,20 @@
 #include <unordered_map>
 #include "data_generator.cpp"
 
-//
-struct SortResults;
+//struct to store the result
+struct SortResults{
+    long long time_ms;
+    long long comparisons;
+};
 
+//
 void ListDataOrder();
 void ListAlgorithms();
 void CollectDataForReport();
-
 bool is_number(const std::string& s);
+bool IsSorted(const int a[], const int n);
+
+// Sorting algorithms functions
 SortResults SelectionSort(int *a, int n);
 SortResults InsertionSort(int *a, int n);
 SortResults ShellSort(int *a, int n);
