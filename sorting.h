@@ -13,6 +13,20 @@ struct SortResults{
     long long comparisons;
 };
 
+// Function pointer type for sorting algorithms and data orders
+typedef SortResults (*SortFunction)(int*, int);
+typedef void (*DataOrderFunction)(int*, int);
+
+struct AlgorithmInfo{
+    string name;
+    SortFunction function;
+};
+
+struct DataOrderInfo{
+    string name;
+    DataOrderFunction function;
+};
+
 //
 void ListDataOrder();
 void ListAlgorithms();
