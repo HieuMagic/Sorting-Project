@@ -1,0 +1,6 @@
+g++ sorting.cpp -o sorting.exe
+.\sorting.exe -a radix-sort 70000_random_input.txt -both
+.\sorting.exe -a selection-sort 50000 -rand -time
+.\sorting.exe -a counting-sort 70000 -comp
+.\sorting.exe -c heap-sort radix-sort 70000_random_input.txt
+.\sorting.exe -c selection-sort insertion-sort 100000 -nsorted
