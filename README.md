@@ -17,19 +17,19 @@ in the command prompt. The executable file must be placed in the same directory 
 ### Here are the commands you can use to run the program:
 #### Command 1: Run a sorting algorithm on user-provided data.
     • Prototype: [Execution file] -a [Algorithm] [Input filename]|[Output parameter(s)]
-    – Example: a.exe -a radix-sort 70000_random_input.txt -both
+    – Example: sorting.exe -a radix-sort 70000_random_input.txt -both
 #### Command 2: Run a sorting algorithm on the data generated automatically with specified size and order.
     • Prototype: [Execution file] -a [Algorithm] [Input size] [Input order] [Output parameter(s)]
-    – Example: a.exe -a selection-sort 50000 -rand -time
+    – Example: sorting.exe -a selection-sort 50000 -rand -time
 #### Command 3: Run a sorting algorithm on ALL data arrangements of a specified size.
     • Prototype: [Execution file] -a [Algorithm] [Input size] [Output parameter(s)] 
-    – Example: a.exe -a counting-sort 70000 -comp
+    – Example: sorting.exe -a counting-sort 70000 -comp
 #### Command 4: Run two sorting algorithms on user-provided data.
     • Prototype: [Execution file] -c [Algorithm 1] [Algorithm 2] [Input filename] 
-    – Example: a.exe -c heap-sort merge-sort 70000_random_input.txt
+    – Example: sorting.exe -c heap-sort merge-sort 70000_random_input.txt
 #### Command 5: Run two sorting algorithms on the data generated automatically with specified size and order.
     • Prototype: [Execution file] -c [Algorithm 1] [Algorithm 2] [Input size] [Input order]
-    - Example: a.exe -c insertion-sort selection-sort 100000 -nsorted
+    - Example: sorting.exe -c insertion-sort selection-sort 100000 -nsorted
 
 ### Input Arguments: The following arguments are applied for both modes:
 #### a. Mode:
