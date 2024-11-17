@@ -1,5 +1,4 @@
 #include "sorting.h"
-#include<stack>
 using namespace std;
 
 // Map to store the algorithm's command, <name, function pointer>
