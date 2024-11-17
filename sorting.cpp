@@ -190,7 +190,24 @@ SortResults ShellSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    
+    /*
+    * shellsort sắp xếp trên nửa mảng phía sau
+    * sau đó tăng dần ra phía trước
+    */
+    for (int gap = n / 2; gap > 0; gap /= 2)
+    {
+        for (int i = gap; i < n; i++)
+        {
+            int temp = a[i];
+            int j = i;
+            while (j >= gap && a[j - gap] > temp) {
+                a[j] = a[j - gap];
+                j -= gap;
+            }
+            // Đặt phần tử vào vị trí đúng
+            a[j] = temp;
+        }
+    }
     // END OF SORTING
 
     // Stop counting and calculate time 
@@ -475,6 +492,55 @@ SortResults ShakerSort(int a[], int n)
     return {time, comparisons};
 }
 
+void flashSortHelper(int a[], int n)
+{
+	if (n <= 1) return;
+
+	// Tìm giá trị min và max
+	int minVal = a[0], maxVal = 0;
+	for (int i = 1; i < n; i++) {
+		if (a[i] < minVal) minVal = a[i];
+		if (a[i] > maxVal) maxVal = a[i];
+	} 
+
+	// nếu min = max thì mảng đã sắp xếp, tất cả các phần tử giống nhau
+	if (minVal == maxVal) return;
+
+	// Số lượng bucket
+	int m = int(0.43 * n); //chọn 0.43 để tối ưu dựa trên thực nghiệm
+	int* bucket = new int[m](); // Mảng đếm cho các bucket, khởi tạo 0
+
+	// Phân loại các phần tử vào bucket
+	double c1 = (double)(m - 1) / (maxVal - minVal);
+	for (int i = 0; i < n; i++) {
+		int k = int(c1 * (a[i] - minVal));
+		bucket[k]++;
+	}
+
+	// Tính toán chỉ số bắt đầu của mỗi bucket
+	for (int i = 1; i < m; i++) {
+		bucket[i] += bucket[i - 1];
+	}
+
+	// Hoán vị các phần tử vào đúng vị trí
+	int i = 0, j = 0;
+	while (i < n) {
+		int k = int(c1 * (a[i] - minVal));
+		if (i >= bucket[k]) {
+			i++;
+			continue;
+		}
+		swap(a[i], a[bucket[k] - 1]);
+		bucket[k]--;
+	}
+
+	// Dùng Insertion Sort để hoàn thành sắp xếp
+    // các phần tử đã được phân phối để độ chênh lệch giữa chúngả tốt vì ít phép di chuyển
+	InsertionSort(a, bucket[0]);
+
+	delete[] bucket;
+}
+
 SortResults FlashSort(int a[], int n)
 {
     // Start counting time and comparisons
@@ -482,7 +548,7 @@ SortResults FlashSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    
+    flashSortHelper(a, n);
     // END OF SORTING
 
     // Stop counting and calculate time 
