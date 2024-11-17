@@ -1,5 +1,5 @@
 #include "sorting.h"
-
+#include<stack>
 using namespace std;
 
 // Map to store the algorithm's command, <name, function pointer>
@@ -309,7 +309,7 @@ void Merge(int a[], int low, int middle, int high, long long& comparisions) {
 void MergeSort(int a[], int low, int high, long long& comparisons) {
     if (low < high) {
         comparisons++;
-        int middle = (low + high) / 2; //index of the middle element
+        int middle = (high + low) / 2; //index of the middle element
         MergeSort(a, low, middle, comparisons);
         MergeSort(a, middle + 1, high, comparisons);
         Merge(a, low, middle, high, comparisons);
@@ -333,8 +333,23 @@ SortResults MergeSort(int a[], int n)
     // Return the result
     return {time, comparisons};
 }
+
+
+int findMedian(int a[], int low, int high) {
+    int mid = low + (high - low) / 2;
+
+    // Sort the low, mid, high elements
+    if (a[low] > a[mid]) swap(a[low], a[mid]);
+    if (a[low] > a[high]) swap(a[low], a[high]);
+    if (a[mid] > a[high]) swap(a[mid], a[high]);
+
+    // Put the median at the end
+    swap(a[mid], a[high]);
+    return a[high];
+}
+
 int Partition(int a[], int low, int high, long long& comparisions) {
-    int pivot = a[high];
+    int pivot = findMedian(a, low, high); //Define the first pivot
     int i = low - 1; //Lowest index of the low side
 
     for (int j = low; j < high; j++) {
@@ -360,6 +375,7 @@ void QuickSort(int a[], int low, int high, long long& comparisions) {
         QuickSort(a, pivot + 1, high, comparisions);
     }
 }
+
 
 SortResults QuickSort(int a[], int n)
 {
