@@ -1,9 +1,9 @@
 #pragma once
-#include <iostream>
 #include <vector>
 #include <string>
-#include <fstream>
 #include <chrono>
+#include <fstream>
+#include <iostream>
 #include <unordered_map>
 #include "data_generator.cpp"
 
@@ -17,6 +17,7 @@ struct SortResults{
 typedef SortResults (*SortFunction)(int*, int);
 typedef void (*DataOrderFunction)(int*, int);
 
+// Struct to store the algorithm and data order info
 struct AlgorithmInfo{
     string name;
     SortFunction function;
@@ -27,7 +28,7 @@ struct DataOrderInfo{
     DataOrderFunction function;
 };
 
-//
+// 
 void ListDataOrder();
 void ListAlgorithms();
 void CollectDataForReport();
