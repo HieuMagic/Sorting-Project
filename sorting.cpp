@@ -26,7 +26,7 @@ void ListAlgorithms(){
     // ADD ALGORITHMS HEHE
     algorithms_map["selection-sort"] = {"Selection Sort", SelectionSort};
     algorithms_map["insertion-sort"] = {"Insertion Sort", InsertionSort};
-    // algorithms_map["shell-sort"] = {"Shell Sort", ShellSort};
+    algorithms_map["shell-sort"] = {"Shell Sort", ShellSort};
     algorithms_map["bubble-sort"] = {"Bubble Sort", BubbleSort}; 
     algorithms_map["heap-sort"] = {"Heap Sort", HeapSort};
     algorithms_map["merge-sort"] = {"Merge Sort", MergeSort};
@@ -35,7 +35,7 @@ void ListAlgorithms(){
     algorithms_map["counting-sort"] = {"Counting Sort", CountingSort};
     // algorithms_map["binary-insertion-sort"] = {"Binary Insertion Sort", BinaryInsertionSort};
     // algorithms_map["shaker-sort"] = {"Shaker Sort", ShakerSort}; 
-    // algorithms_map["flash-sort"] = {"Flash Sort", FlashSort};
+    algorithms_map["flash-sort"] = {"Flash Sort", FlashSort};
     // -------------------------------------
     // Only add algorithms that are fully implemented
 }
