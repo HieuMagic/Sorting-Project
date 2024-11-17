@@ -30,8 +30,8 @@ void ListAlgorithms(){
     // algorithms_map["shell-sort"] = {"Shell Sort", ShellSort};
     algorithms_map["bubble-sort"] = {"Bubble Sort", BubbleSort}; 
     algorithms_map["heap-sort"] = {"Heap Sort", HeapSort};
-    // algorithms_map["merge-sort"] = {"Merge Sort", MergeSort};
-    // algorithms_map["quick-sort"] = {"Quick Sort", QuickSort};
+    algorithms_map["merge-sort"] = {"Merge Sort", MergeSort};
+    algorithms_map["quick-sort"] = {"Quick Sort", QuickSort};
     algorithms_map["radix-sort"] = {"Radix Sort", RadixSort};
     algorithms_map["counting-sort"] = {"Counting Sort", CountingSort};
     // algorithms_map["binary-insertion-sort"] = {"Binary Insertion Sort", BinaryInsertionSort};
@@ -174,7 +174,7 @@ SortResults InsertionSort(int a[], int n)
         a[j + 1] = key;
     }
     // END OF SORTING
-
+    
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
     long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
@@ -271,6 +271,51 @@ SortResults HeapSort(int a[], int n)
     return {time, comparisons};
 }
 
+void Merge(int a[], int low, int middle, int high, long long& comparisions) {
+    int n1 = middle - low + 1; //Numbers of elements of the left Array
+    int n2 = high - middle;    // Number of elements of the right Array
+
+    int leftArr[n1], rightArr[n2]; //Define two Arrays to hold elements for merging
+
+    for (int i = 0; i < n1; i++) {
+        leftArr[i] = a[i + low];
+    }
+    for (int j = 0; j < n2; j++) {
+        rightArr[j] = a[j + middle + 1];
+    }
+
+    int i = 0, j = 0, k = low;
+
+    //Merge two Arrays into a in ascending order
+    while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) {
+            a[k++] = leftArr[i++];
+        }
+        else {
+            a[k++] = rightArr[j++];
+        }
+        comparisions++;
+    }
+
+    //Add if there's any elements left in leftArr or rightArr into array a
+    while (i < n1) {
+        a[k++] = leftArr[i++];
+    }
+    while (j < n2) {
+        a[k++] = rightArr[j++];
+    }
+}
+
+void MergeSort(int a[], int low, int high, long long& comparisons) {
+    if (low < high) {
+        comparisons++;
+        int middle = (low + high) / 2; //index of the middle element
+        MergeSort(a, low, middle, comparisons);
+        MergeSort(a, middle + 1, high, comparisons);
+        Merge(a, low, middle, high, comparisons);
+    }
+}
+
 SortResults MergeSort(int a[], int n)
 {
     // Start counting time and comparisons
@@ -278,7 +323,7 @@ SortResults MergeSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    
+    MergeSort(a, 0, n - 1, comparisons);
     // END OF SORTING
 
     // Stop counting and calculate time 
@@ -288,6 +333,33 @@ SortResults MergeSort(int a[], int n)
     // Return the result
     return {time, comparisons};
 }
+int Partition(int a[], int low, int high, long long& comparisions) {
+    int pivot = a[high];
+    int i = low - 1; //Lowest index of the low side
+
+    for (int j = low; j < high; j++) {
+        if (a[j] <= pivot) {
+            i++;
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+        comparisions++;
+    }
+    int temp = a[i + 1];
+    a[i + 1] = a[high];
+    a[high] = temp;
+    return i + 1;
+}
+
+void QuickSort(int a[], int low, int high, long long& comparisions) {
+    if (low < high) {
+        comparisions++;
+        int pivot = Partition(a, low, high, comparisions);
+        QuickSort(a, low, pivot - 1, comparisions);
+        QuickSort(a, pivot + 1, high, comparisions);
+    }
+}
 
 SortResults QuickSort(int a[], int n)
 {
@@ -296,7 +368,7 @@ SortResults QuickSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-
+    QuickSort(a, 0, n - 1, comparisons);
     // END OF SORTING
 
     // Stop counting and calculate time 
