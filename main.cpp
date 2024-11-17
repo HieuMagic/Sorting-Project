@@ -17,7 +17,7 @@ int main(int argc, char** argv)
     // Get the flag and check if it valid or not to continue
     string flag = argv[1];
     
-    if (flag == "-a"){
+    if (flag == "-a" && argc >= 5){
         // Get the algorithm command
         string algorithm_command= argv[2];
 
@@ -33,15 +33,15 @@ int main(int argc, char** argv)
         // Knowing what command to run
         if (argc == 5){ // Which is whether command 1 or 3
             // COMMAND 1
-            if (!is_number(argv[3])){ // If the 3th-index of argv is not a number, then we run command 1. (argv[3] = [Input filename])
+            if (!Is_number(argv[3])){ // If the 3th-index of argv is not a number, then we run command 1. (argv[3] = [Input filename])
                 // Get value from argument
                 string filename = argv[3];
                 string output_parameter = argv[4];
 
                 // File processing
                 ifstream fin(filename);
-                if (!fin.is_open()){
-                    cout << "Unable to open input file. Ending program...";
+                if (!fin.is_open()) {
+                    cerr << "Unable to open input file. Ending program...\n";
                     return 1;
                 }
                 
@@ -53,11 +53,10 @@ int main(int argc, char** argv)
             
                 // Since each of the element we need to extract is separated by a single space
                 // We will extract the data from the string by using the space as the delimiter
-                int data_index = 0;
                 int* original_array = new int[size];
-                for (int i = 0; i < size; i++){
-                    original_array[i] = stoi(data_line.substr(data_index, data_line.find(' ', data_index) - data_index));
-                    data_index = data_line.find(' ', data_index) + 1;
+                stringstream ss(data_line);
+                for (int i = 0; i < size; ++i) {
+                    ss >> original_array[i];
                 }
                 
                 // Duplicate the array
@@ -70,7 +69,7 @@ int main(int argc, char** argv)
                 // Write the sorted array to the output file
                 ofstream fout("output.txt");
                 if (!fout.is_open()){
-                    cout << "Unable to open output file. Ending program...";
+                    cerr << "Unable to open output file. Ending program...";
                     return 1;
                 }
                 for (int i = 0; i < size; i++){
@@ -132,7 +131,7 @@ int main(int argc, char** argv)
                     // (This run 4 times and each time we write to input_1.txt, input_2.txt, input_3.txt, input_4.txt)
                     ofstream fout("input_" + input_file_index + ".txt");
                     if (!fout.is_open()){
-                        cout << "Unable to open output file. Ending program...";
+                        cerr << "Unable to open output file. Ending program...";
                         return 1;
                     }
 
@@ -170,7 +169,7 @@ int main(int argc, char** argv)
 
             // Check if command is valid or not
             if (data_orders_map.count(data_order_command) == 0){
-                cout << "The data order isn't exist in the data_orders_map list. Ending program...";
+                cerr << "The data order isn't exist in the data_orders_map list. Ending program...";
                 return 1;
             }
 
@@ -191,7 +190,7 @@ int main(int argc, char** argv)
             // Write the generated array to the input file
             ofstream fout("input.txt");
             if (!fout.is_open()){
-                cout << "Unable to open output file. Ending program...";
+                cerr << "Unable to open output file. Ending program...";
                 return 1;
             }
 
@@ -202,7 +201,7 @@ int main(int argc, char** argv)
             // Write the sorted array to the output file
             ofstream fout2("output.txt");
             if (!fout2.is_open()){
-                cout << "Unable to open output file. Ending program...";
+                cerr << "Unable to open output file. Ending program...";
                 return 1;
             }
 
@@ -231,18 +230,18 @@ int main(int argc, char** argv)
             fout2.close();
         }
         else {
-            cout << "Too many/few arguments. Ending program...";
+            cerr << "Too many/few arguments. Ending program...";
             return 1;
         }
     }
-    else if (flag == "-c"){
+    else if (flag == "-c" && argc >= 5){
         // Get the algorithm commands
         string algorithm_1_command = argv[2];
         string algorithm_2_command = argv[3];
 
         // Check if the algorithm commands are valid or not
         if (algorithms_map.count(algorithm_1_command) == 0 || algorithms_map.count(algorithm_2_command) == 0){
-            cout << "The algorithm isn't exist in the algorithms list. Ending program...";
+            cerr << "The algorithm isn't exist in the algorithms list. Ending program...";
             return 1;
         }
 
@@ -258,7 +257,7 @@ int main(int argc, char** argv)
             // File processing
             ifstream fin(filename);
             if (!fin.is_open()){
-                cout << "Unable to open input file. Ending program...";
+                cerr << "Unable to open input file. Ending program...";
                 return 1;
             }
             
@@ -270,11 +269,10 @@ int main(int argc, char** argv)
         
             // Since each of the element we need to extract is separated by a single space
             // We will extract the data from the string by using the space as the delimiter
-            int data_index = 0;
             int* original_array = new int[size];
-            for (int i = 0; i < size; i++){
-                original_array[i] = stoi(data_line.substr(data_index, data_line.find(' ', data_index) - data_index));
-                data_index = data_line.find(' ', data_index) + 1;
+            stringstream ss(data_line);
+            for (int i = 0; i < size; ++i) {
+                ss >> original_array[i];
             }
 
             // Duplicate the array
@@ -309,7 +307,7 @@ int main(int argc, char** argv)
 
             // Check if command is valid or not
             if (data_orders_map.count(data_order_command) == 0){
-                cout << "The data order isn't exist in the data_orders_map list. Ending program...";
+                cerr << "The data order isn't exist in the data_orders_map list. Ending program...";
                 return 1;
             }
 
@@ -335,7 +333,7 @@ int main(int argc, char** argv)
             // Write the generated array to the input file
             ofstream fout("input.txt");
             if (!fout.is_open()){
-                cout << "Unable to open output file. Ending program...";
+                cerr << "Unable to open output file. Ending program...";
                 return 1;
             }
 
@@ -357,12 +355,12 @@ int main(int argc, char** argv)
             fout.close();
         }
         else {
-            cout << "Too many/few arguments. Ending program...";
+            cerr << "Too many/few arguments. Ending program...";
             return 1;
         }
     }
     else { // If user enter any other flag
-        cout << "Invalid flag. Ending program...";
+        cerr << "Invalid flag. Ending program...";
         return 1;
     }
 

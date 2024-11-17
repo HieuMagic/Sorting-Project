@@ -1,4 +1,5 @@
 #include "sorting.h"
+
 using namespace std;
 
 // Map to store the algorithm's command, <name, function pointer>
@@ -33,24 +34,21 @@ void ListAlgorithms(){
     algorithms_map["quick-sort"] = {"Quick Sort", QuickSort};
     algorithms_map["radix-sort"] = {"Radix Sort", RadixSort};
     algorithms_map["counting-sort"] = {"Counting Sort", CountingSort};
-    // algorithms_map["binary-insertion-sort"] = {"Binary Insertion Sort", BinaryInsertionSort};
-    // algorithms_map["shaker-sort"] = {"Shaker Sort", ShakerSort}; 
+    algorithms_map["binary-insertion-sort"] = {"Binary Insertion Sort", BinaryInsertionSort};
+    algorithms_map["shaker-sort"] = {"Shaker Sort", ShakerSort}; 
     algorithms_map["flash-sort"] = {"Flash Sort", FlashSort};
     // -------------------------------------
     // Only add algorithms that are fully implemented
 }
 
 // Use to check if a string is a number (Support function)
-bool is_number(const std::string& s)
-{
-    std::string::const_iterator it = s.begin();
-    while (it != s.end() && std::isdigit(*it)) ++it;
-    return !s.empty() && it == s.end();
+bool Is_number(const std::string& s) {
+    return !s.empty() && all_of(s.begin(), s.end(), [](unsigned char c) { return isdigit(c); });
 }
 
-// Use to check if an array is sorted or not
-bool IsSorted(const int a[], const int n){
-    for (int i = 0; i < n - 1; i++){
+// Check if an array is sorted
+bool IsSorted(const int* a, int n) {
+    for (int i = 0; i < n - 1; ++i) {
         if (a[i] > a[i + 1]) return false;
     }
     return true;
@@ -59,11 +57,14 @@ bool IsSorted(const int a[], const int n){
 // Collect data for the report
 void CollectDataForReport(){
     // Declare Data Size
-    vector<int> data_sizes = {50000};
+    vector<int> data_sizes = {100000};
 
     // Write the result (running time and number of comparisons) in a result file
     ofstream fout("report_data.txt");
-    if (!fout.is_open()) cout << "Cant open result file.\n";
+    if (!fout.is_open()) {
+        cerr << "Cannot open result file.\n";
+        return;
+    }
 
     // for each Data Order S1
     for (pair<string, DataOrderInfo> data_order_info : data_orders_map){
@@ -76,13 +77,15 @@ void CollectDataForReport(){
             int* original_array = new int[size];
 
             // Check if allocation is successful
-            if (original_array == nullptr){
-                cout << "Memory allocation failed. Ending program...";
+            if (!original_array) {
+                cerr << "Memory allocation failed. Ending program...";
+                // Clean up and return
+                fout.close();
                 return;
             }
 
             // Generate the array based on the data order
-            data_order.function(original_array, size); // data_order.second is the function to generate data
+            data_order.function(original_array, size);
 
             // for each Sorting Algorithm S3
             for (pair<string, AlgorithmInfo> algorithm_info : algorithms_map){
@@ -96,8 +99,10 @@ void CollectDataForReport(){
                 int* duplicated_array = new int[size];
                 
                 // Check if allocation is successful
-                if (duplicated_array == nullptr){
-                    cout << "Memory allocation failed. Ending program...";
+                if (!duplicated_array) {
+                    cerr << "Memory allocation failed. Ending program...";
+                    // Clean up and return
+                    fout.close();
                     return;
                 }
 
@@ -108,8 +113,10 @@ void CollectDataForReport(){
                 SortResults result = algorithm.function(duplicated_array, size); // algorithm.second is the function to sort
                 
                 // Double check if the array is sorted
-                if (IsSorted(duplicated_array, size) == false){
-                    cout << "The array is not sorted. Ending program...";
+                if (!IsSorted(duplicated_array, size)) {
+                    cerr << "The array is not sorted. Ending program...";
+                    delete[] original_array;
+                    delete[] duplicated_array;
                     return;
                 }
 
@@ -140,9 +147,10 @@ SortResults SelectionSort(int a[], int n)
     for (int i = 0; i < n; i++){
         int min_index = i;
         for (int j = i + 1; j < n; j++){
-            if (a[j] < a[min_index]) min_index = j; comparisons++;
+            if (a[j] < a[min_index]) min_index = j;
+            comparisons++;
         }
-        swap(a[i], a[min_index]);
+        Swap(a[i], a[min_index]);
     }
     // END OF SORTING
 
@@ -164,13 +172,14 @@ SortResults InsertionSort(int a[], int n)
     for (int i = 1; i < n; i++){
         int key = a[i];
         int j = i - 1;
+
         while (j >= 0 && a[j] > key){
             a[j + 1] = a[j];
             j--;
             comparisons++;
         }
-        comparisons++;
         a[j + 1] = key;
+        comparisons++;
     }
     // END OF SORTING
     
@@ -189,21 +198,17 @@ SortResults ShellSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    /*
-    * shellsort sắp xếp trên nửa mảng phía sau
-    * sau đó tăng dần ra phía trước
-    */
-    for (int gap = n / 2; gap > 0; gap /= 2)
-    {
-        for (int i = gap; i < n; i++)
-        {
+    // ShellSort with diminishing increment gap
+    for (int gap = n / 2; gap > 0; gap /= 2) {
+        for (int i = gap; i < n; i++) {
             int temp = a[i];
             int j = i;
+            // Perform gapped insertion sort for this gap size
             while (j >= gap && a[j - gap] > temp) {
                 a[j] = a[j - gap];
                 j -= gap;
+                comparisons++;
             }
-            // Đặt phần tử vào vị trí đúng
             a[j] = temp;
         }
     }
@@ -224,10 +229,11 @@ SortResults BubbleSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    for(int i = 0; i < n - 1; i++){
-        for(int j = 0; j < n - i - 1; j++){
-            if(a[j] > a[j + 1]){
-                swap(a[j], a[j + 1]);
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            // Swap if elements are in wrong order
+            if (a[j] > a[j + 1]) {
+                Swap(a[j], a[j + 1]);
             }
             comparisons++;
         }
@@ -243,21 +249,24 @@ SortResults BubbleSort(int a[], int n)
 }
 
 void Heapify(int a[], int n, int i, long long &comparisons){
-    int largest = i;
-    int left = 2 * i + 1;
-    int right = 2 * i + 2;
+    int largest = i; // Initialize largest as root
+    int left = 2 * i + 1; // Left child
+    int right = 2 * i + 2; // Right child
 
-    if (left < n && a[left] > a[largest]){
+    // If left child is larger than root
+    if (left < n && a[left] > a[largest]) {
         largest = left;
         comparisons++;
     }
-    if (right < n && a[right] > a[largest]){
+    // If right child is larger than largest so far
+    if (right < n && a[right] > a[largest]) {
         largest = right;
         comparisons++;
     }
-
-    if (largest != i){
-        swap(a[i], a[largest]);
+    // If largest is not root
+    if (largest != i) {
+        Swap(a[i], a[largest]);
+        // Recursively heapify the affected sub-tree
         Heapify(a, n, largest, comparisons);
     }
 }
@@ -269,12 +278,15 @@ SortResults HeapSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    for (int i = n / 2 - 1; i >= 0; i--){
+    // Build heap (rearrange array)
+    for (int i = n / 2 - 1; i >= 0; i--) {
         Heapify(a, n, i, comparisons);
     }
-
-    for (int i = n - 1; i > 0; i--){
-        swap(a[0], a[i]);
+    // One by one extract an element from heap
+    for (int i = n - 1; i > 0; i--) {
+        // Move current root to end
+        Swap(a[0], a[i]);
+        // Call max heapify on the reduced heap
         Heapify(a, i, 0, comparisons);
     }
     // END OF SORTING
@@ -287,45 +299,50 @@ SortResults HeapSort(int a[], int n)
     return {time, comparisons};
 }
 
-void Merge(int a[], int low, int middle, int high, long long& comparisions) {
-    int n1 = middle - low + 1; //Numbers of elements of the left Array
-    int n2 = high - middle;    // Number of elements of the right Array
+void Merge(int a[], int low, int middle, int high, long long& comparisons) {
+    int n1 = middle - low + 1; // Number of elements in left array
+    int n2 = high - middle;    // Number of elements in right array
 
-    int leftArr[n1], rightArr[n2]; //Define two Arrays to hold elements for merging
+    int* leftArr = new int[n1];
+    int* rightArr = new int[n2];
 
     for (int i = 0; i < n1; i++) {
-        leftArr[i] = a[i + low];
+        leftArr[i] = a[low + i];
     }
     for (int j = 0; j < n2; j++) {
-        rightArr[j] = a[j + middle + 1];
+        rightArr[j] = a[middle + 1 + j];
     }
 
     int i = 0, j = 0, k = low;
-
-    //Merge two Arrays into a in ascending order
+    // Merge left and right arrays back into original array
     while (i < n1 && j < n2) {
         if (leftArr[i] <= rightArr[j]) {
             a[k++] = leftArr[i++];
-        }
-        else {
+        } else {
             a[k++] = rightArr[j++];
         }
-        comparisions++;
+        comparisons++;
     }
 
-    //Add if there's any elements left in leftArr or rightArr into array a
+    // Copy remaining elements of leftArr if any
     while (i < n1) {
         a[k++] = leftArr[i++];
     }
+
+    // Copy remaining elements of rightArr if any
     while (j < n2) {
         a[k++] = rightArr[j++];
     }
+
+    delete[] leftArr;
+    delete[] rightArr;
 }
 
 void MergeSort(int a[], int low, int high, long long& comparisons) {
     if (low < high) {
         comparisons++;
-        int middle = (high + low) / 2; //index of the middle element
+        int middle = low + (high - low) / 2; // Same as (low + high) / 2 but avoids overflow for large low & high
+
         MergeSort(a, low, middle, comparisons);
         MergeSort(a, middle + 1, high, comparisons);
         Merge(a, low, middle, high, comparisons);
@@ -351,47 +368,41 @@ SortResults MergeSort(int a[], int n)
 }
 
 
-int findMedian(int a[], int low, int high) {
+int FindMedian(int a[], int low, int high) {
     int mid = low + (high - low) / 2;
-
     // Sort the low, mid, high elements
     if (a[low] > a[mid]) swap(a[low], a[mid]);
     if (a[low] > a[high]) swap(a[low], a[high]);
     if (a[mid] > a[high]) swap(a[mid], a[high]);
-
     // Put the median at the end
     swap(a[mid], a[high]);
     return a[high];
 }
 
-int Partition(int a[], int low, int high, long long& comparisions) {
-    int pivot = findMedian(a, low, high); //Define the first pivot
-    int i = low - 1; //Lowest index of the low side
+int Partition(int a[], int low, int high, long long& comparisons) {
+    int pivot = FindMedian(a, low, high); // Determine pivot as median of first, middle, last
+    int i = low - 1; // Index of smaller element
 
     for (int j = low; j < high; j++) {
         if (a[j] <= pivot) {
             i++;
-            int temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
+            swap(a[i], a[j]);
         }
-        comparisions++;
+        comparisons++;
     }
-    int temp = a[i + 1];
-    a[i + 1] = a[high];
-    a[high] = temp;
+    swap(a[i + 1], a[high]);
     return i + 1;
 }
 
-void QuickSort(int a[], int low, int high, long long& comparisions) {
+void QuickSort(int a[], int low, int high, long long& comparisons) {
     if (low < high) {
-        comparisions++;
-        int pivot = Partition(a, low, high, comparisions);
-        QuickSort(a, low, pivot - 1, comparisions);
-        QuickSort(a, pivot + 1, high, comparisions);
+        comparisons++;
+        int pivot = Partition(a, low, high, comparisons);
+        // Recursively sort elements before and after partition
+        QuickSort(a, low, pivot - 1, comparisons);
+        QuickSort(a, pivot + 1, high, comparisons);
     }
 }
-
 
 SortResults QuickSort(int a[], int n)
 {
@@ -487,7 +498,7 @@ SortResults RadixSort(int a[], int n)
         if(a[i] < min) min = a[i];
     }
 
-    // Shift array to make all numbers positive
+    // Shift array to offset negative values
     if(min < 0) {
         for(int i = 0; i < n; i++) {
             a[i] -= min;
@@ -496,13 +507,13 @@ SortResults RadixSort(int a[], int n)
     }
 
     // Create counting array and output array
-    vector<int> count(10, 0);
-    vector<int> output(n);
+    int* count = new int[10];
+    int* output = new int[n];
     
     // Do counting sort for every digit
     for(int exp = 1; max/exp > 0; exp *= 10) {
         // Clear count array
-        fill(count.begin(), count.end(), 0);
+        fill(count, count + 10, 0);
 
         // Store count of occurrences
         for(int i = 0; i < n; i++) {
@@ -527,12 +538,16 @@ SortResults RadixSort(int a[], int n)
         }
     }
 
-    // Shift back if we had negative numbers
+    // Restore original values if negative shift was applied
     if(min < 0) {
         for(int i = 0; i < n; i++) {
             a[i] += min;
         }
     }
+    
+    // Clean up
+    delete[] count;
+    delete[] output;
     // END OF SORTING
 
     // Stop counting and calculate time 
@@ -550,7 +565,28 @@ SortResults BinaryInsertionSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    
+    for (int i = 1; i < n; ++i) {
+        int key = a[i];
+        int left = 0;
+        int right = i - 1;
+
+        // Use binary search to find the correct location
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            comparisons++;
+            if (a[mid] < key) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        // Shifting the elements to make space for the key
+        for (int j = i - 1; j >= left; --j) {
+            a[j + 1] = a[j];
+        }
+        a[left] = key;
+    }
     // END OF SORTING
 
     // Stop counting and calculate time 
@@ -568,7 +604,39 @@ SortResults ShakerSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    
+    bool swapped = true;
+    int start_index = 0;
+    int end_index = n - 1;
+
+    while (swapped) {
+        swapped = false;
+
+        // Traverse from left to right
+        for (int i = start_index; i < end_index; ++i) {
+            comparisons++;
+            if (a[i] > a[i + 1]) {
+                swap(a[i], a[i + 1]);
+                swapped = true;
+            }
+        }
+
+        // If no elements were swapped, then the array is sorted
+        if (!swapped) break;
+
+        // Otherwise, reset the swapped flag so it can be used in the next stage
+        swapped = false;
+        --end_index;
+
+        // Traverse from right to left
+        for (int i = end_index - 1; i >= start_index; --i) {
+            comparisons++;
+            if (a[i] > a[i + 1]) {
+                swap(a[i], a[i + 1]);
+                swapped = true;
+            }
+        }
+        ++start_index;
+    }
     // END OF SORTING
 
     // Stop counting and calculate time 
@@ -579,53 +647,66 @@ SortResults ShakerSort(int a[], int n)
     return {time, comparisons};
 }
 
-void flashSortHelper(int a[], int n)
-{
-	if (n <= 1) return;
+void FlashSortHelper(int a[], int n, long long& comparisons) {
+    if (n <= 1) return;
 
-	// Tìm giá trị min và max
-	int minVal = a[0], maxVal = 0;
-	for (int i = 1; i < n; i++) {
-		if (a[i] < minVal) minVal = a[i];
-		if (a[i] > maxVal) maxVal = a[i];
-	} 
+    // Find min and max value
+    int minVal = a[0], maxVal = a[0];
+    for (int i = 1; i < n; i++) {
+        if (a[i] < minVal) minVal = a[i];
+        if (a[i] > maxVal) maxVal = a[i];
+    }
 
-	// nếu min = max thì mảng đã sắp xếp, tất cả các phần tử giống nhau
-	if (minVal == maxVal) return;
+    // If all elements are the same, return
+    if (minVal == maxVal) return;
 
-	// Số lượng bucket
-	int m = int(0.43 * n); //chọn 0.43 để tối ưu dựa trên thực nghiệm
-	int* bucket = new int[m](); // Mảng đếm cho các bucket, khởi tạo 0
+    // Number of bins used for sorting (at least 2 to avoid division by zero)
+    int m = int(0.43 * n) + 1; 
+    int* bucket = new (nothrow) int[m](); // Initialize buckets
 
-	// Phân loại các phần tử vào bucket
-	double c1 = (double)(m - 1) / (maxVal - minVal);
-	for (int i = 0; i < n; i++) {
-		int k = int(c1 * (a[i] - minVal));
-		bucket[k]++;
-	}
+    if (!bucket) {
+        std::cerr << "Memory allocation failed. Exiting sort...\n";
+        return;
+    }
 
-	// Tính toán chỉ số bắt đầu của mỗi bucket
-	for (int i = 1; i < m; i++) {
-		bucket[i] += bucket[i - 1];
-	}
+    // Distribution of elements into buckets
+    double c1 = (double)(m - 1) / (maxVal - minVal);
+    for (int i = 0; i < n; i++) {
+        int k = int(c1 * (a[i] - minVal));
+        bucket[k]++;
+    }
 
-	// Hoán vị các phần tử vào đúng vị trí
-	int i = 0, j = 0;
-	while (i < n) {
-		int k = int(c1 * (a[i] - minVal));
-		if (i >= bucket[k]) {
-			i++;
-			continue;
-		}
-		swap(a[i], a[bucket[k] - 1]);
-		bucket[k]--;
-	}
+    // Compute start index of each bucket
+    for (int i = 1; i < m; i++) {
+        bucket[i] += bucket[i - 1];
+    }
 
-	// Dùng Insertion Sort để hoàn thành sắp xếp
-    // các phần tử đã được phân phối để độ chênh lệch giữa chúngả tốt vì ít phép di chuyển
-	InsertionSort(a, bucket[0]);
+    // Permutate elements into correct bucket position
+    int i = 0;
+    while (i < n) {
+        int k = int(c1 * (a[i] - minVal));
+        if (i >= bucket[k]) {
+            i++;
+            continue;
+        }
+        std::swap(a[i], a[--bucket[k]]); // Fix decrement issue in index
+    }
 
-	delete[] bucket;
+    // Apply Insertion Sort for fine-tuning in the sorted range.
+    for (int i = 1; i < n; ++i) {
+        int key = a[i];
+        int j = i - 1;
+        while (j >= 0 && a[j] > key) {
+            a[j + 1] = a[j];
+            j--;
+            comparisons++;
+        }
+        a[j + 1] = key;
+        comparisons++;
+    }
+
+    // Clean up the dynamic array
+    delete[] bucket;
 }
 
 SortResults FlashSort(int a[], int n)
@@ -635,7 +716,7 @@ SortResults FlashSort(int a[], int n)
     chrono::high_resolution_clock::time_point start = chrono::high_resolution_clock::now();
     
     // BEGIN SORTING
-    flashSortHelper(a, n);
+    FlashSortHelper(a, n, comparisons);
     // END OF SORTING
 
     // Stop counting and calculate time 

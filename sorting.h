@@ -4,6 +4,8 @@
 #include <chrono>
 #include <fstream>
 #include <iostream>
+#include <sstream>
+#include <algorithm>
 #include <unordered_map>
 #include "data_generator.cpp"
 
@@ -32,7 +34,7 @@ struct DataOrderInfo{
 void ListDataOrder();
 void ListAlgorithms();
 void CollectDataForReport();
-bool is_number(const std::string& s);
+bool Is_number(const std::string& s);
 bool IsSorted(const int a[], const int n);
 
 // Sorting algorithms functions
