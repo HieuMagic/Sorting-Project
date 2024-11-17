@@ -1,3 +1,6 @@
+// This is the "sorting" file of the project.
+// It will contain all the sorting algorithms and data orders that we will use in the project. As well as the function to generate the report data.
+
 #include "sorting.h"
 
 using namespace std;
@@ -57,7 +60,7 @@ bool IsSorted(const int* a, int n) {
 // Collect data for the report
 void CollectDataForReport(){
     // Declare Data Size
-    vector<int> data_sizes = {100000};
+    vector<int> data_sizes = {10000, 30000, 50000, 100000, 300000, 500000};
 
     // Write the result (running time and number of comparisons) in a result file
     ofstream fout("report_data.txt");

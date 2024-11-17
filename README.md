@@ -2,6 +2,14 @@
 
 ## Welcome
 Welcome to the Sorting Project! This project demonstrates various sorting algorithms and their performance.
+The project is developed by students of the University of Science, VNU-HCM, as part of the course "Data Structures and Algorithms" (CQ2023/3).
+
+23CTT3 - Group 9: 
+1. Nguyen Quang Duy - 23120245
+2. Luu Trong Hieu - 23120258
+3. Van Dinh Hieu - 23120260
+Repository link: https://github.com/HieuMagic/Sorting-Project.git 
+Special thanks to our teacher, Mrs. Phan Thi Phuong Uyen, for her guidance and support.
 
 ## How to Use
 1. Clone the repository to your local machine.
@@ -13,6 +21,8 @@ g++ sorting.cpp -o sorting.exe
 ```
 4.Your source code can compiled into an executable file (.exe) that can be executed using commands
 in the command prompt. The executable file must be placed in the same directory as the source code.
+
+Note: There's also a file called command_test_example.txt that contains some example commands that you can use to test the program.
 
 ### Here are the commands you can use to run the program:
 #### Command 1: Run a sorting algorithm on user-provided data.

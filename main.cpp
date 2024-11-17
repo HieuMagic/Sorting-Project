@@ -1,3 +1,15 @@
+/*
+// 23CTT3 - Group 9: 
+// 1. Nguyen Quang Duy - 23120245
+// 2. Luu Trong Hieu - 23120258
+// 3. Van Dinh Hieu - 23120260
+// Repository link: https://github.com/HieuMagic/Sorting-Project.git 
+// Special thanks to our teacher, Mrs. Phan Thi Phuong Uyen, for her guidance and support.
+// The project is developed by students of the University of Science, VNU-HCM, as part of the course "Data Structures and Algorithms" (CQ2023/3).
+*/
+
+//This is the main file of the project. It will take the input from the user and run the program based on the input.
+
 #include "sorting.cpp"
 
 using namespace std;
@@ -23,7 +35,7 @@ int main(int argc, char** argv)
 
         // Check if the algorithm command is valid or not
         if (algorithms_map.count(algorithm_command) == 0){
-            cout << "The algorithm isn't exist in the algorithms list. Ending program...";
+            cerr << "The algorithm isn't exist in the algorithms list. Ending program...";
             return 1;
         }
 

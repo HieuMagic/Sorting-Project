@@ -30,12 +30,14 @@ struct DataOrderInfo{
     DataOrderFunction function;
 };
 
-// 
+// Support functions
 void ListDataOrder();
 void ListAlgorithms();
-void CollectDataForReport();
 bool Is_number(const std::string& s);
 bool IsSorted(const int a[], const int n);
+
+// Function to collect data for the report
+void CollectDataForReport();
 
 // Sorting algorithms functions
 SortResults SelectionSort(int *a, int n);
