@@ -1,0 +1,288 @@
+[Randomize] with size [10000] using [Flash Sort]	->Time: 248 milliseconds		Comparisons: 13570
+[Randomize] with size [10000] using [Counting Sort]	->Time: 174 milliseconds		Comparisons: 19998
+[Randomize] with size [10000] using [Radix Sort]	->Time: 1330 milliseconds		Comparisons: 19998
+[Randomize] with size [10000] using [Quick Sort]	->Time: 1016 milliseconds		Comparisons: 139905
+[Randomize] with size [10000] using [Merge Sort]	->Time: 1973 milliseconds		Comparisons: 130347
+[Randomize] with size [10000] using [Binary Insertion Sort]	->Time: 31360 milliseconds		Comparisons: 118998
+[Randomize] with size [10000] using [Heap Sort]	->Time: 1690 milliseconds		Comparisons: 166003
+[Randomize] with size [10000] using [Bubble Sort]	->Time: 133415 milliseconds		Comparisons: 49995000
+[Randomize] with size [10000] using [Shaker Sort]	->Time: 166918 milliseconds		Comparisons: 37627149
+[Randomize] with size [10000] using [Shell Sort]	->Time: 1249 milliseconds		Comparisons: 147450
+[Randomize] with size [10000] using [Insertion Sort]	->Time: 43312 milliseconds		Comparisons: 25268273
+[Randomize] with size [10000] using [Selection Sort]	->Time: 61042 milliseconds		Comparisons: 49995000
+[Randomize] with size [30000] using [Flash Sort]	->Time: 807 milliseconds		Comparisons: 41285
+[Randomize] with size [30000] using [Counting Sort]	->Time: 540 milliseconds		Comparisons: 59998
+[Randomize] with size [30000] using [Radix Sort]	->Time: 4465 milliseconds		Comparisons: 59998
+[Randomize] with size [30000] using [Quick Sort]	->Time: 3458 milliseconds		Comparisons: 490579
+[Randomize] with size [30000] using [Merge Sort]	->Time: 6722 milliseconds		Comparisons: 438615
+[Randomize] with size [30000] using [Binary Insertion Sort]	->Time: 294706 milliseconds		Comparisons: 404759
+[Randomize] with size [30000] using [Heap Sort]	->Time: 4733 milliseconds		Comparisons: 570839
+[Randomize] with size [30000] using [Bubble Sort]	->Time: 1788245 milliseconds		Comparisons: 449985000
+[Randomize] with size [30000] using [Shaker Sort]	->Time: 1768712 milliseconds		Comparisons: 336274260
+[Randomize] with size [30000] using [Shell Sort]	->Time: 6349 milliseconds		Comparisons: 557936
+[Randomize] with size [30000] using [Insertion Sort]	->Time: 427926 milliseconds		Comparisons: 223364825
+[Randomize] with size [30000] using [Selection Sort]	->Time: 531837 milliseconds		Comparisons: 449985000
+[Randomize] with size [50000] using [Flash Sort]	->Time: 1277 milliseconds		Comparisons: 63210
+[Randomize] with size [50000] using [Counting Sort]	->Time: 667 milliseconds		Comparisons: 99998
+[Randomize] with size [50000] using [Radix Sort]	->Time: 7212 milliseconds		Comparisons: 99998
+[Randomize] with size [50000] using [Quick Sort]	->Time: 6255 milliseconds		Comparisons: 847232
+[Randomize] with size [50000] using [Merge Sort]	->Time: 11718 milliseconds		Comparisons: 768213
+[Randomize] with size [50000] using [Binary Insertion Sort]	->Time: 807240 milliseconds		Comparisons: 711160
+[Randomize] with size [50000] using [Heap Sort]	->Time: 8366 milliseconds		Comparisons: 1006961
+[Randomize] with size [50000] using [Bubble Sort]	->Time: 5603324 milliseconds		Comparisons: 1249975000
+[Randomize] with size [50000] using [Shaker Sort]	->Time: 5160324 milliseconds		Comparisons: 938012269
+[Randomize] with size [50000] using [Shell Sort]	->Time: 9875 milliseconds		Comparisons: 1334909
+[Randomize] with size [50000] using [Insertion Sort]	->Time: 1206516 milliseconds		Comparisons: 623500910
+[Randomize] with size [50000] using [Selection Sort]	->Time: 1618401 milliseconds		Comparisons: 1249975000
+[Randomize] with size [100000] using [Flash Sort]	->Time: 2859 milliseconds		Comparisons: 99999
+[Randomize] with size [100000] using [Counting Sort]	->Time: 1302 milliseconds		Comparisons: 199998
+[Randomize] with size [100000] using [Radix Sort]	->Time: 14095 milliseconds		Comparisons: 199998
+[Randomize] with size [100000] using [Quick Sort]	->Time: 12501 milliseconds		Comparisons: 1833025
+[Randomize] with size [100000] using [Merge Sort]	->Time: 25595 milliseconds		Comparisons: 1636271
+[Randomize] with size [100000] using [Binary Insertion Sort]	->Time: 3261598 milliseconds		Comparisons: 1522718
+[Randomize] with size [100000] using [Heap Sort]	->Time: 17622 milliseconds		Comparisons: 2162583
+[Randomize] with size [100000] using [Bubble Sort]	->Time: 23753073 milliseconds		Comparisons: 4999950000
+[Randomize] with size [100000] using [Shaker Sort]	->Time: 21735572 milliseconds		Comparisons: 3743516744
+[Randomize] with size [100000] using [Shell Sort]	->Time: 19722 milliseconds		Comparisons: 2571964
+[Randomize] with size [100000] using [Insertion Sort]	->Time: 4811435 milliseconds		Comparisons: 2500885031
+[Randomize] with size [100000] using [Selection Sort]	->Time: 5904247 milliseconds		Comparisons: 4999950000
+[Randomize] with size [300000] using [Flash Sort]	->Time: 10875 milliseconds		Comparisons: 299999
+[Randomize] with size [300000] using [Counting Sort]	->Time: 3749 milliseconds		Comparisons: 599998
+[Randomize] with size [300000] using [Radix Sort]	->Time: 41500 milliseconds		Comparisons: 599998
+[Randomize] with size [300000] using [Quick Sort]	->Time: 43974 milliseconds		Comparisons: 6708640
+[Randomize] with size [300000] using [Merge Sort]	->Time: 70135 milliseconds		Comparisons: 5384968
+[Randomize] with size [300000] using [Binary Insertion Sort]	->Time: 28827616 milliseconds		Comparisons: 5041468
+[Randomize] with size [300000] using [Heap Sort]	->Time: 60240 milliseconds		Comparisons: 7199410
+[Randomize] with size [300000] using [Bubble Sort]	->Time: 227013639 milliseconds		Comparisons: 44999850000
+[Randomize] with size [300000] using [Shaker Sort]	->Time: 190578179 milliseconds		Comparisons: 33692101080
+[Randomize] with size [300000] using [Shell Sort]	->Time: 67335 milliseconds		Comparisons: 9365637
+[Randomize] with size [300000] using [Insertion Sort]	->Time: 43284113 milliseconds		Comparisons: 22493123733
+[Randomize] with size [300000] using [Selection Sort]	->Time: 52977674 milliseconds		Comparisons: 44999850000
+[Randomize] with size [500000] using [Flash Sort]	->Time: 19400 milliseconds		Comparisons: 499999
+[Randomize] with size [500000] using [Counting Sort]	->Time: 6312 milliseconds		Comparisons: 999998
+[Randomize] with size [500000] using [Radix Sort]	->Time: 68717 milliseconds		Comparisons: 999998
+[Randomize] with size [500000] using [Quick Sort]	->Time: 82610 milliseconds		Comparisons: 13020324
+[Randomize] with size [500000] using [Merge Sort]	->Time: 126478 milliseconds		Comparisons: 9337024
+[Randomize] with size [500000] using [Binary Insertion Sort]	->Time: 79864463 milliseconds		Comparisons: 8773605
+[Randomize] with size [500000] using [Heap Sort]	->Time: 105151 milliseconds		Comparisons: 12560640
+[Randomize] with size [500000] using [Bubble Sort]	->Time: 630167582 milliseconds		Comparisons: 124999750000
+[Randomize] with size [500000] using [Shaker Sort]	->Time: 528271517 milliseconds		Comparisons: 93646539922
+[Randomize] with size [500000] using [Shell Sort]	->Time: 118263 milliseconds		Comparisons: 19582799
+[Randomize] with size [500000] using [Insertion Sort]	->Time: 119929719 milliseconds		Comparisons: 62385284300
+[Randomize] with size [500000] using [Selection Sort]	->Time: 146602965 milliseconds		Comparisons: 124999750000
+[Nearly Sorted] with size [10000] using [Flash Sort]	->Time: 283 milliseconds		Comparisons: 15692
+[Nearly Sorted] with size [10000] using [Counting Sort]	->Time: 139 milliseconds		Comparisons: 19998
+[Nearly Sorted] with size [10000] using [Radix Sort]	->Time: 1224 milliseconds		Comparisons: 19998
+[Nearly Sorted] with size [10000] using [Quick Sort]	->Time: 2713 milliseconds		Comparisons: 1919037
+[Nearly Sorted] with size [10000] using [Merge Sort]	->Time: 1458 milliseconds		Comparisons: 93254
+[Nearly Sorted] with size [10000] using [Binary Insertion Sort]	->Time: 530 milliseconds		Comparisons: 121422
+[Nearly Sorted] with size [10000] using [Heap Sort]	->Time: 1155 milliseconds		Comparisons: 180074
+[Nearly Sorted] with size [10000] using [Bubble Sort]	->Time: 66942 milliseconds		Comparisons: 49995000
+[Nearly Sorted] with size [10000] using [Shaker Sort]	->Time: 630 milliseconds		Comparisons: 169847
+[Nearly Sorted] with size [10000] using [Shell Sort]	->Time: 413 milliseconds		Comparisons: 21632
+[Nearly Sorted] with size [10000] using [Insertion Sort]	->Time: 162 milliseconds		Comparisons: 81125
+[Nearly Sorted] with size [10000] using [Selection Sort]	->Time: 58989 milliseconds		Comparisons: 49995000
+[Nearly Sorted] with size [30000] using [Flash Sort]	->Time: 775 milliseconds		Comparisons: 47092
+[Nearly Sorted] with size [30000] using [Counting Sort]	->Time: 457 milliseconds		Comparisons: 59998
+[Nearly Sorted] with size [30000] using [Radix Sort]	->Time: 4312 milliseconds		Comparisons: 59998
+[Nearly Sorted] with size [30000] using [Quick Sort]	->Time: 18859 milliseconds		Comparisons: 14548058
+[Nearly Sorted] with size [30000] using [Merge Sort]	->Time: 4612 milliseconds		Comparisons: 301398
+[Nearly Sorted] with size [30000] using [Binary Insertion Sort]	->Time: 1921 milliseconds		Comparisons: 410324
+[Nearly Sorted] with size [30000] using [Heap Sort]	->Time: 4034 milliseconds		Comparisons: 610347
+[Nearly Sorted] with size [30000] using [Bubble Sort]	->Time: 597746 milliseconds		Comparisons: 449985000
+[Nearly Sorted] with size [30000] using [Shaker Sort]	->Time: 1391 milliseconds		Comparisons: 449880
+[Nearly Sorted] with size [30000] using [Shell Sort]	->Time: 1342 milliseconds		Comparisons: 66074
+[Nearly Sorted] with size [30000] using [Insertion Sort]	->Time: 399 milliseconds		Comparisons: 201207
+[Nearly Sorted] with size [30000] using [Selection Sort]	->Time: 530677 milliseconds		Comparisons: 449985000
+[Nearly Sorted] with size [50000] using [Flash Sort]	->Time: 1103 milliseconds		Comparisons: 78492
+[Nearly Sorted] with size [50000] using [Counting Sort]	->Time: 648 milliseconds		Comparisons: 99998
+[Nearly Sorted] with size [50000] using [Radix Sort]	->Time: 6878 milliseconds		Comparisons: 99998
+[Nearly Sorted] with size [50000] using [Quick Sort]	->Time: 35817 milliseconds		Comparisons: 27483139
+[Nearly Sorted] with size [50000] using [Merge Sort]	->Time: 7626 milliseconds		Comparisons: 490140
+[Nearly Sorted] with size [50000] using [Binary Insertion Sort]	->Time: 3137 milliseconds		Comparisons: 723104
+[Nearly Sorted] with size [50000] using [Heap Sort]	->Time: 6752 milliseconds		Comparisons: 1074595
+[Nearly Sorted] with size [50000] using [Bubble Sort]	->Time: 1644180 milliseconds		Comparisons: 1249975000
+[Nearly Sorted] with size [50000] using [Shaker Sort]	->Time: 2480 milliseconds		Comparisons: 849847
+[Nearly Sorted] with size [50000] using [Shell Sort]	->Time: 2407 milliseconds		Comparisons: 117702
+[Nearly Sorted] with size [50000] using [Insertion Sort]	->Time: 834 milliseconds		Comparisons: 368913
+[Nearly Sorted] with size [50000] using [Selection Sort]	->Time: 1454328 milliseconds		Comparisons: 1249975000
+[Nearly Sorted] with size [100000] using [Flash Sort]	->Time: 2181 milliseconds		Comparisons: 156993
+[Nearly Sorted] with size [100000] using [Counting Sort]	->Time: 1406 milliseconds		Comparisons: 199998
+[Nearly Sorted] with size [100000] using [Radix Sort]	->Time: 14042 milliseconds		Comparisons: 199998
+[Nearly Sorted] with size [100000] using [Quick Sort]	->Time: 62592 milliseconds		Comparisons: 48555384
+[Nearly Sorted] with size [100000] using [Merge Sort]	->Time: 14187 milliseconds		Comparisons: 1014221
+[Nearly Sorted] with size [100000] using [Binary Insertion Sort]	->Time: 5552 milliseconds		Comparisons: 1555150
+[Nearly Sorted] with size [100000] using [Heap Sort]	->Time: 13762 milliseconds		Comparisons: 2303052
+[Nearly Sorted] with size [100000] using [Bubble Sort]	->Time: 6598676 milliseconds		Comparisons: 4999950000
+[Nearly Sorted] with size [100000] using [Shaker Sort]	->Time: 3250 milliseconds		Comparisons: 1499880
+[Nearly Sorted] with size [100000] using [Shell Sort]	->Time: 4320 milliseconds		Comparisons: 115838
+[Nearly Sorted] with size [100000] using [Insertion Sort]	->Time: 983 milliseconds		Comparisons: 395135
+[Nearly Sorted] with size [100000] using [Selection Sort]	->Time: 5845421 milliseconds		Comparisons: 4999950000
+[Nearly Sorted] with size [300000] using [Flash Sort]	->Time: 6391 milliseconds		Comparisons: 470994
+[Nearly Sorted] with size [300000] using [Counting Sort]	->Time: 4099 milliseconds		Comparisons: 599998
+[Nearly Sorted] with size [300000] using [Radix Sort]	->Time: 49859 milliseconds		Comparisons: 599998
+[Nearly Sorted] with size [300000] using [Quick Sort]	->Time: 77077 milliseconds		Comparisons: 52577139
+[Nearly Sorted] with size [300000] using [Merge Sort]	->Time: 48924 milliseconds		Comparisons: 3149533
+[Nearly Sorted] with size [300000] using [Binary Insertion Sort]	->Time: 17092 milliseconds		Comparisons: 5167438
+[Nearly Sorted] with size [300000] using [Heap Sort]	->Time: 45297 milliseconds		Comparisons: 7604756
+[Nearly Sorted] with size [300000] using [Bubble Sort]	->Time: 59523889 milliseconds		Comparisons: 44999850000
+[Nearly Sorted] with size [300000] using [Shaker Sort]	->Time: 7715 milliseconds		Comparisons: 5099847
+[Nearly Sorted] with size [300000] using [Shell Sort]	->Time: 13065 milliseconds		Comparisons: 80242
+[Nearly Sorted] with size [300000] using [Insertion Sort]	->Time: 1330 milliseconds		Comparisons: 589901
+[Nearly Sorted] with size [300000] using [Selection Sort]	->Time: 52801112 milliseconds		Comparisons: 44999850000
+[Nearly Sorted] with size [500000] using [Flash Sort]	->Time: 10773 milliseconds		Comparisons: 784993
+[Nearly Sorted] with size [500000] using [Counting Sort]	->Time: 6607 milliseconds		Comparisons: 999998
+[Nearly Sorted] with size [500000] using [Radix Sort]	->Time: 83631 milliseconds		Comparisons: 999998
+[Nearly Sorted] with size [500000] using [Quick Sort]	->Time: 82509 milliseconds		Comparisons: 49087064
+[Nearly Sorted] with size [500000] using [Merge Sort]	->Time: 93552 milliseconds		Comparisons: 5340505
+[Nearly Sorted] with size [500000] using [Binary Insertion Sort]	->Time: 32039 milliseconds		Comparisons: 8970053
+[Nearly Sorted] with size [500000] using [Heap Sort]	->Time: 78586 milliseconds		Comparisons: 13245104
+[Nearly Sorted] with size [500000] using [Bubble Sort]	->Time: 165264625 milliseconds		Comparisons: 124999750000
+[Nearly Sorted] with size [500000] using [Shaker Sort]	->Time: 8495 milliseconds		Comparisons: 6499909
+[Nearly Sorted] with size [500000] using [Shell Sort]	->Time: 21267 milliseconds		Comparisons: 86756
+[Nearly Sorted] with size [500000] using [Insertion Sort]	->Time: 1657 milliseconds		Comparisons: 724625
+[Nearly Sorted] with size [500000] using [Selection Sort]	->Time: 146763186 milliseconds		Comparisons: 124999750000
+[Sorted] with size [10000] using [Flash Sort]	->Time: 272 milliseconds		Comparisons: 15698
+[Sorted] with size [10000] using [Counting Sort]	->Time: 141 milliseconds		Comparisons: 19998
+[Sorted] with size [10000] using [Radix Sort]	->Time: 1265 milliseconds		Comparisons: 19998
+[Sorted] with size [10000] using [Quick Sort]	->Time: 541 milliseconds		Comparisons: 119535
+[Sorted] with size [10000] using [Merge Sort]	->Time: 1534 milliseconds		Comparisons: 79007
+[Sorted] with size [10000] using [Binary Insertion Sort]	->Time: 393 milliseconds		Comparisons: 123617
+[Sorted] with size [10000] using [Heap Sort]	->Time: 1142 milliseconds		Comparisons: 180584
+[Sorted] with size [10000] using [Bubble Sort]	->Time: 61356 milliseconds		Comparisons: 49995000
+[Sorted] with size [10000] using [Shaker Sort]	->Time: 10 milliseconds		Comparisons: 9999
+[Sorted] with size [10000] using [Shell Sort]	->Time: 277 milliseconds		Comparisons: 0
+[Sorted] with size [10000] using [Insertion Sort]	->Time: 27 milliseconds		Comparisons: 9999
+[Sorted] with size [10000] using [Selection Sort]	->Time: 58213 milliseconds		Comparisons: 49995000
+[Sorted] with size [30000] using [Flash Sort]	->Time: 696 milliseconds		Comparisons: 47098
+[Sorted] with size [30000] using [Counting Sort]	->Time: 463 milliseconds		Comparisons: 59998
+[Sorted] with size [30000] using [Radix Sort]	->Time: 4194 milliseconds		Comparisons: 59998
+[Sorted] with size [30000] using [Quick Sort]	->Time: 1774 milliseconds		Comparisons: 403631
+[Sorted] with size [30000] using [Merge Sort]	->Time: 4392 milliseconds		Comparisons: 257727
+[Sorted] with size [30000] using [Binary Insertion Sort]	->Time: 1315 milliseconds		Comparisons: 417233
+[Sorted] with size [30000] using [Heap Sort]	->Time: 3739 milliseconds		Comparisons: 610369
+[Sorted] with size [30000] using [Bubble Sort]	->Time: 593331 milliseconds		Comparisons: 449985000
+[Sorted] with size [30000] using [Shaker Sort]	->Time: 66 milliseconds		Comparisons: 29999
+[Sorted] with size [30000] using [Shell Sort]	->Time: 935 milliseconds		Comparisons: 0
+[Sorted] with size [30000] using [Insertion Sort]	->Time: 65 milliseconds		Comparisons: 29999
+[Sorted] with size [30000] using [Selection Sort]	->Time: 525721 milliseconds		Comparisons: 449985000
+[Sorted] with size [50000] using [Flash Sort]	->Time: 1170 milliseconds		Comparisons: 78498
+[Sorted] with size [50000] using [Counting Sort]	->Time: 689 milliseconds		Comparisons: 99998
+[Sorted] with size [50000] using [Radix Sort]	->Time: 7057 milliseconds		Comparisons: 99998
+[Sorted] with size [50000] using [Quick Sort]	->Time: 2777 milliseconds		Comparisons: 717248
+[Sorted] with size [50000] using [Merge Sort]	->Time: 6737 milliseconds		Comparisons: 451951
+[Sorted] with size [50000] using [Binary Insertion Sort]	->Time: 2341 milliseconds		Comparisons: 734465
+[Sorted] with size [50000] using [Heap Sort]	->Time: 6460 milliseconds		Comparisons: 1074836
+[Sorted] with size [50000] using [Bubble Sort]	->Time: 1643688 milliseconds		Comparisons: 1249975000
+[Sorted] with size [50000] using [Shaker Sort]	->Time: 68 milliseconds		Comparisons: 49999
+[Sorted] with size [50000] using [Shell Sort]	->Time: 1704 milliseconds		Comparisons: 0
+[Sorted] with size [50000] using [Insertion Sort]	->Time: 110 milliseconds		Comparisons: 49999
+[Sorted] with size [50000] using [Selection Sort]	->Time: 1453234 milliseconds		Comparisons: 1249975000
+[Sorted] with size [100000] using [Flash Sort]	->Time: 2242 milliseconds		Comparisons: 156998
+[Sorted] with size [100000] using [Counting Sort]	->Time: 1277 milliseconds		Comparisons: 199998
+[Sorted] with size [100000] using [Radix Sort]	->Time: 14034 milliseconds		Comparisons: 199998
+[Sorted] with size [100000] using [Quick Sort]	->Time: 6011 milliseconds		Comparisons: 1534481
+[Sorted] with size [100000] using [Merge Sort]	->Time: 13962 milliseconds		Comparisons: 953903
+[Sorted] with size [100000] using [Binary Insertion Sort]	->Time: 5010 milliseconds		Comparisons: 1568929
+[Sorted] with size [100000] using [Heap Sort]	->Time: 13793 milliseconds		Comparisons: 2303177
+[Sorted] with size [100000] using [Bubble Sort]	->Time: 6587397 milliseconds		Comparisons: 4999950000
+[Sorted] with size [100000] using [Shaker Sort]	->Time: 128 milliseconds		Comparisons: 99999
+[Sorted] with size [100000] using [Shell Sort]	->Time: 3689 milliseconds		Comparisons: 0
+[Sorted] with size [100000] using [Insertion Sort]	->Time: 277 milliseconds		Comparisons: 99999
+[Sorted] with size [100000] using [Selection Sort]	->Time: 5856510 milliseconds		Comparisons: 4999950000
+[Sorted] with size [300000] using [Flash Sort]	->Time: 6546 milliseconds		Comparisons: 470998
+[Sorted] with size [300000] using [Counting Sort]	->Time: 4080 milliseconds		Comparisons: 599998
+[Sorted] with size [300000] using [Radix Sort]	->Time: 50454 milliseconds		Comparisons: 599998
+[Sorted] with size [300000] using [Quick Sort]	->Time: 19205 milliseconds		Comparisons: 5044660
+[Sorted] with size [300000] using [Merge Sort]	->Time: 48745 milliseconds		Comparisons: 3097263
+[Sorted] with size [300000] using [Binary Insertion Sort]	->Time: 16604 milliseconds		Comparisons: 5175713
+[Sorted] with size [300000] using [Heap Sort]	->Time: 45352 milliseconds		Comparisons: 7604905
+[Sorted] with size [300000] using [Bubble Sort]	->Time: 59315593 milliseconds		Comparisons: 44999850000
+[Sorted] with size [300000] using [Shaker Sort]	->Time: 406 milliseconds		Comparisons: 299999
+[Sorted] with size [300000] using [Shell Sort]	->Time: 12252 milliseconds		Comparisons: 0
+[Sorted] with size [300000] using [Insertion Sort]	->Time: 812 milliseconds		Comparisons: 299999
+[Sorted] with size [300000] using [Selection Sort]	->Time: 52713791 milliseconds		Comparisons: 44999850000
+[Sorted] with size [500000] using [Flash Sort]	->Time: 10688 milliseconds		Comparisons: 784998
+[Sorted] with size [500000] using [Counting Sort]	->Time: 6523 milliseconds		Comparisons: 999998
+[Sorted] with size [500000] using [Radix Sort]	->Time: 84056 milliseconds		Comparisons: 999998
+[Sorted] with size [500000] using [Quick Sort]	->Time: 32397 milliseconds		Comparisons: 8737875
+[Sorted] with size [500000] using [Merge Sort]	->Time: 81573 milliseconds		Comparisons: 5283215
+[Sorted] with size [500000] using [Binary Insertion Sort]	->Time: 29373 milliseconds		Comparisons: 8975713
+[Sorted] with size [500000] using [Heap Sort]	->Time: 78938 milliseconds		Comparisons: 13245380
+[Sorted] with size [500000] using [Bubble Sort]	->Time: 165095351 milliseconds		Comparisons: 124999750000
+[Sorted] with size [500000] using [Shaker Sort]	->Time: 689 milliseconds		Comparisons: 499999
+[Sorted] with size [500000] using [Shell Sort]	->Time: 20675 milliseconds		Comparisons: 0
+[Sorted] with size [500000] using [Insertion Sort]	->Time: 1200 milliseconds		Comparisons: 499999
+[Sorted] with size [500000] using [Selection Sort]	->Time: 146621935 milliseconds		Comparisons: 124999750000
+[Reversed] with size [10000] using [Flash Sort]	->Time: 245 milliseconds		Comparisons: 14249
+[Reversed] with size [10000] using [Counting Sort]	->Time: 141 milliseconds		Comparisons: 19998
+[Reversed] with size [10000] using [Radix Sort]	->Time: 1188 milliseconds		Comparisons: 19998
+[Reversed] with size [10000] using [Quick Sort]	->Time: 908 milliseconds		Comparisons: 224031
+[Reversed] with size [10000] using [Merge Sort]	->Time: 2534 milliseconds		Comparisons: 74607
+[Reversed] with size [10000] using [Binary Insertion Sort]	->Time: 64331 milliseconds		Comparisons: 113631
+[Reversed] with size [10000] using [Heap Sort]	->Time: 1158 milliseconds		Comparisons: 153619
+[Reversed] with size [10000] using [Bubble Sort]	->Time: 201370 milliseconds		Comparisons: 49995000
+[Reversed] with size [10000] using [Shaker Sort]	->Time: 271288 milliseconds		Comparisons: 49995000
+[Reversed] with size [10000] using [Shell Sort]	->Time: 460 milliseconds		Comparisons: 62560
+[Reversed] with size [10000] using [Insertion Sort]	->Time: 94970 milliseconds		Comparisons: 50004999
+[Reversed] with size [10000] using [Selection Sort]	->Time: 63873 milliseconds		Comparisons: 49995000
+[Reversed] with size [30000] using [Flash Sort]	->Time: 893 milliseconds		Comparisons: 42749
+[Reversed] with size [30000] using [Counting Sort]	->Time: 382 milliseconds		Comparisons: 59998
+[Reversed] with size [30000] using [Radix Sort]	->Time: 4132 milliseconds		Comparisons: 59998
+[Reversed] with size [30000] using [Quick Sort]	->Time: 3280 milliseconds		Comparisons: 775011
+[Reversed] with size [30000] using [Merge Sort]	->Time: 4538 milliseconds		Comparisons: 249503
+[Reversed] with size [30000] using [Binary Insertion Sort]	->Time: 581276 milliseconds		Comparisons: 387248
+[Reversed] with size [30000] using [Heap Sort]	->Time: 3788 milliseconds		Comparisons: 531535
+[Reversed] with size [30000] using [Bubble Sort]	->Time: 1762476 milliseconds		Comparisons: 449985000
+[Reversed] with size [30000] using [Shaker Sort]	->Time: 2409629 milliseconds		Comparisons: 449985000
+[Reversed] with size [30000] using [Shell Sort]	->Time: 1503 milliseconds		Comparisons: 206992
+[Reversed] with size [30000] using [Insertion Sort]	->Time: 857137 milliseconds		Comparisons: 450014999
+[Reversed] with size [30000] using [Selection Sort]	->Time: 569115 milliseconds		Comparisons: 449985000
+[Reversed] with size [50000] using [Flash Sort]	->Time: 1182 milliseconds		Comparisons: 71249
+[Reversed] with size [50000] using [Counting Sort]	->Time: 666 milliseconds		Comparisons: 99998
+[Reversed] with size [50000] using [Radix Sort]	->Time: 7036 milliseconds		Comparisons: 99998
+[Reversed] with size [50000] using [Quick Sort]	->Time: 5412 milliseconds		Comparisons: 1377667
+[Reversed] with size [50000] using [Merge Sort]	->Time: 6828 milliseconds		Comparisons: 432511
+[Reversed] with size [50000] using [Binary Insertion Sort]	->Time: 1596277 milliseconds		Comparisons: 684481
+[Reversed] with size [50000] using [Heap Sort]	->Time: 6523 milliseconds		Comparisons: 939630
+[Reversed] with size [50000] using [Bubble Sort]	->Time: 4859443 milliseconds		Comparisons: 1249975000
+[Reversed] with size [50000] using [Shaker Sort]	->Time: 6705338 milliseconds		Comparisons: 1249975000
+[Reversed] with size [50000] using [Shell Sort]	->Time: 2788 milliseconds		Comparisons: 397280
+[Reversed] with size [50000] using [Insertion Sort]	->Time: 2304945 milliseconds		Comparisons: 1250024999
+[Reversed] with size [50000] using [Selection Sort]	->Time: 1586743 milliseconds		Comparisons: 1249975000
+[Reversed] with size [100000] using [Flash Sort]	->Time: 2554 milliseconds		Comparisons: 142499
+[Reversed] with size [100000] using [Counting Sort]	->Time: 1497 milliseconds		Comparisons: 199998
+[Reversed] with size [100000] using [Radix Sort]	->Time: 14116 milliseconds		Comparisons: 199998
+[Reversed] with size [100000] using [Quick Sort]	->Time: 11687 milliseconds		Comparisons: 2996371
+[Reversed] with size [100000] using [Merge Sort]	->Time: 14523 milliseconds		Comparisons: 915023
+[Reversed] with size [100000] using [Binary Insertion Sort]	->Time: 6398483 milliseconds		Comparisons: 1468946
+[Reversed] with size [100000] using [Heap Sort]	->Time: 13382 milliseconds		Comparisons: 2024810
+[Reversed] with size [100000] using [Bubble Sort]	->Time: 20060667 milliseconds		Comparisons: 4999950000
+[Reversed] with size [100000] using [Shaker Sort]	->Time: 26810773 milliseconds		Comparisons: 4999950000
+[Reversed] with size [100000] using [Shell Sort]	->Time: 5770 milliseconds		Comparisons: 844560
+[Reversed] with size [100000] using [Insertion Sort]	->Time: 9640986 milliseconds		Comparisons: 5000049999
+[Reversed] with size [100000] using [Selection Sort]	->Time: 6348548 milliseconds		Comparisons: 4999950000
+[Reversed] with size [300000] using [Flash Sort]	->Time: 6856 milliseconds		Comparisons: 427499
+[Reversed] with size [300000] using [Counting Sort]	->Time: 3689 milliseconds		Comparisons: 599998
+[Reversed] with size [300000] using [Radix Sort]	->Time: 50277 milliseconds		Comparisons: 599998
+[Reversed] with size [300000] using [Quick Sort]	->Time: 39752 milliseconds		Comparisons: 10140502
+[Reversed] with size [300000] using [Merge Sort]	->Time: 47792 milliseconds		Comparisons: 2978447
+[Reversed] with size [300000] using [Binary Insertion Sort]	->Time: 57589004 milliseconds		Comparisons: 4875732
+[Reversed] with size [300000] using [Heap Sort]	->Time: 45105 milliseconds		Comparisons: 6779553
+[Reversed] with size [300000] using [Bubble Sort]	->Time: 182256378 milliseconds		Comparisons: 44999850000
+[Reversed] with size [300000] using [Shaker Sort]	->Time: 241539710 milliseconds		Comparisons: 44999850000
+[Reversed] with size [300000] using [Shell Sort]	->Time: 17908 milliseconds		Comparisons: 2500880
+[Reversed] with size [300000] using [Insertion Sort]	->Time: 86707262 milliseconds		Comparisons: 45000149999
+[Reversed] with size [300000] using [Selection Sort]	->Time: 57299679 milliseconds		Comparisons: 44999850000
+[Reversed] with size [500000] using [Flash Sort]	->Time: 11451 milliseconds		Comparisons: 712499
+[Reversed] with size [500000] using [Counting Sort]	->Time: 5906 milliseconds		Comparisons: 999998
+[Reversed] with size [500000] using [Radix Sort]	->Time: 84955 milliseconds		Comparisons: 999998
+[Reversed] with size [500000] using [Quick Sort]	->Time: 70231 milliseconds		Comparisons: 17834242
+[Reversed] with size [500000] using [Merge Sort]	->Time: 81394 milliseconds		Comparisons: 5192495
+[Reversed] with size [500000] using [Binary Insertion Sort]	->Time: 159823603 milliseconds		Comparisons: 8475732
+[Reversed] with size [500000] using [Heap Sort]	->Time: 77602 milliseconds		Comparisons: 11868557
+[Reversed] with size [500000] using [Bubble Sort]	->Time: 504224541 milliseconds		Comparisons: 124999750000
+[Reversed] with size [500000] using [Shaker Sort]	->Time: 671427851 milliseconds		Comparisons: 124999750000
+[Reversed] with size [500000] using [Shell Sort]	->Time: 30032 milliseconds		Comparisons: 4428752
+[Reversed] with size [500000] using [Insertion Sort]	->Time: 240503649 milliseconds		Comparisons: 125000249999
+[Reversed] with size [500000] using [Selection Sort]	->Time: 159328746 milliseconds		Comparisons: 124999750000
