@@ -125,7 +125,7 @@ void CollectDataForReport(){
 
                 // - Take note of S1, S2, S3, running time and number of comparisons
                 fout << "[" << data_order.name << "] with size [" << size << "] using [" << algorithm.name << 
-                        "]\t->Time: " << result.time_ms << " microseconds\t\tComparisons: " << result.comparisons << "\n";
+                        "]\t->Time: " << result.time_ms << " milliseconds\t\tComparisons: " << result.comparisons << "\n";
                 
                 // - Free the memory of A2
                 delete[] duplicated_array;
@@ -158,7 +158,7 @@ SortResults SelectionSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -185,7 +185,7 @@ SortResults InsertionSort(int a[], int n)
     
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -215,7 +215,7 @@ SortResults ShellSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -240,7 +240,7 @@ SortResults BubbleSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -289,7 +289,7 @@ SortResults HeapSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -355,7 +355,7 @@ SortResults MergeSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -408,7 +408,7 @@ SortResults QuickSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -468,7 +468,7 @@ SortResults CountingSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -542,7 +542,7 @@ SortResults RadixSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -580,7 +580,7 @@ SortResults BinaryInsertionSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -628,7 +628,7 @@ SortResults ShakerSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
@@ -706,7 +706,7 @@ SortResults FlashSort(int a[], int n)
 
     // Stop counting and calculate time 
     chrono::high_resolution_clock::time_point end = chrono::high_resolution_clock::now();
-    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count();
+    long long time = chrono::duration_cast<chrono::microseconds>(end - start).count()/ 1000.0;
 
     // Return the result
     return {time, comparisons};
