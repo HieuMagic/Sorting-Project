@@ -45,7 +45,7 @@ int main(int argc, char** argv)
         // Knowing what command to run
         if (argc == 5){ // Which is whether command 1 or 3
             // COMMAND 1
-            if (!Is_number(argv[3])){ // If the 3th-index of argv is not a number, then we run command 1. (argv[3] = [Input filename])
+            if (!IsNumber(argv[3])){ // If the 3th-index of argv is not a number, then we run command 1. (argv[3] = [Input filename])
                 // Get value from argument
                 string filename = argv[3];
                 string output_parameter = argv[4];

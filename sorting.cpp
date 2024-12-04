@@ -45,7 +45,7 @@ void ListAlgorithms(){
 }
 
 // Use to check if a string is a number (Support function)
-bool Is_number(const std::string& s) {
+bool IsNumber(const std::string& s) {
     return !s.empty() && all_of(s.begin(), s.end(), [](unsigned char c) { return isdigit(c); });
 }
 
@@ -125,7 +125,7 @@ void CollectDataForReport(){
 
                 // - Take note of S1, S2, S3, running time and number of comparisons
                 fout << "[" << data_order.name << "] with size [" << size << "] using [" << algorithm.name << 
-                        "]\t->Time: " << result.time_ms << " milliseconds\t\tComparisons: " << result.comparisons << "\n";
+                        "]\t->Time: " << result.time_ms << " microseconds\t\tComparisons: " << result.comparisons << "\n";
                 
                 // - Free the memory of A2
                 delete[] duplicated_array;
@@ -151,7 +151,6 @@ SortResults SelectionSort(int a[], int n)
         int min_index = i;
         for (int j = i + 1; ++ comparisons &&  j < n; j++){
             if ( ++ comparisons && a[j] < a[min_index]) min_index = j;
-            comparisons++;
         }
         Swap(a[i], a[min_index]);
     }
@@ -255,12 +254,10 @@ void Heapify(int a[], int n, int i, long long &comparisons){
     // If left child is larger than root
     if ( ++ comparisons && left < n && ++ comparisons &&  a[left] > a[largest]) {
         largest = left;
-        comparisons++;
     }
     // If right child is larger than largest so far
     if ( ++ comparisons && right < n && ++ comparisons &&  a[right] > a[largest]) {
         largest = right;
-        comparisons++;
     }
     // If largest is not root
     if (largest != i) {
@@ -605,7 +602,6 @@ SortResults ShakerSort(int a[], int n)
 
         // Traverse from left to right
         for (int i = start_index; ++ comparisons &&  i < end_index; ++i) {
-            comparisons++;
             if ( ++ comparisons && a[i] > a[i + 1]) {
                 swap(a[i], a[i + 1]);
                 swapped = true;
@@ -621,7 +617,6 @@ SortResults ShakerSort(int a[], int n)
 
         // Traverse from right to left
         for (int i = end_index - 1; ++ comparisons &&  i >= start_index; --i) {
-            comparisons++;
             if ( ++ comparisons && a[i] > a[i + 1]) {
                 swap(a[i], a[i + 1]);
                 swapped = true;
@@ -691,10 +686,8 @@ void FlashSortHelper(int a[], int n, long long& comparisons) {
         while ( ++ comparisons && j >= 0 && ++ comparisons &&  a[j] > key) {
             a[j + 1] = a[j];
             j--;
-            comparisons++;
         }
         a[j + 1] = key;
-        comparisons++;
     }
 
     // Clean up the dynamic array
